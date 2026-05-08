@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#265EBB" />
+
+  <title>Spelvi — Language learning, reimagined</title>
+  <meta name="description" content="Spelvi is a language learning experience that combines a smart dictionary, lessons, grammar drills, and audiobooks. Coming soon." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Spelvi — Language learning, reimagined" />
+  <meta property="og:description" content="A new language learning experience. Coming soon." />
+  <meta property="og:url" content="https://spelvi.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Spelvi" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spelvi — Language learning, reimagined" />
+  <meta name="twitter:description" content="A new language learning experience. Coming soon." />
+
+  <link rel="canonical" href="https://spelvi.com/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <aside class="lang-pill" aria-label="Spelvi etymology — Swedish for &quot;we play&quot;">
+    <span class="lang-pill__brand">Spelvi</span>
+    <span class="lang-pill__sep">·</span>
+    <span class="lang-pill__etym"><b>spel</b> + <b>vi</b></span>
+    <span class="lang-pill__sep">·</span>
+    <span class="lang-pill__meaning"><em>sw. “we play”</em></span>
+  </aside>
+
+  <main class="page">
+    <header class="brand">
+      <a class="logo" href="/" aria-label="Spelvi home">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" aria-hidden="true">
+          <defs>
+            <linearGradient id="logo-bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#D9C9F0"/>
+              <stop offset="50%" stop-color="#B8C5F2"/>
+              <stop offset="100%" stop-color="#8FA3E6"/>
+            </linearGradient>
+          </defs>
+          <rect width="1024" height="1024" rx="180" fill="url(#logo-bg)"/>
+          <path d="M 240 160 L 760 160 L 760 300 L 360 300 L 360 440 L 760 440 L 760 860 L 240 860 L 240 720 L 640 720 L 640 580 L 240 580 Z" fill="#FFFFFF"/>
+          <circle cx="540" cy="520" r="44" fill="#F9C6B0"/>
+        </svg>
+        <span>Spelvi</span>
+      </a>
+    </header>
+
+    <section class="hero">
+      <h1>
+        <span class="hero__top">Language learning,</span>
+        <span class="hero__bottom">reimagined.</span>
+      </h1>
+      <p class="hero__sub">
+        A smart dictionary, structured lessons, grammar drills, audiobooks, and progress
+        you can feel — in one calm, focused app.
+      </p>
+
+      <div class="cta">
+        <a class="btn btn--primary" href="mailto:hello@spelvi.com?subject=Spelvi%20launch%20updates">
+          Get launch updates
+        </a>
+        <span class="cta__hint">Coming soon · iOS · Android</span>
+      </div>
+    </section>
+
+    <section class="features" aria-label="What's inside">
+      <article>
+        <h3>Dictionary that thinks</h3>
+        <p>EN ↔ RU plus 9 more languages, with definitions, synonyms, idioms, and pronunciation in one search.</p>
+      </article>
+      <article>
+        <h3>Lessons that stick</h3>
+        <p>Ten proven study techniques and twelve grammar exercise types, paced to your real progress.</p>
+      </article>
+      <article>
+        <h3>Books and audiobooks</h3>
+        <p>Read public-domain literature with one-tap word lookup, then listen to LibriVox narrations of the same book.</p>
+      </article>
+      <article>
+        <h3>Progress you can see</h3>
+        <p>Streaks, daily goals, weekly charts. Your effort, made visible without nagging.</p>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <small>
+        © <span id="year"></span> Spelvi.
+        <a href="mailto:hello@spelvi.com">hello@spelvi.com</a>
+      </small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

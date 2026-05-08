@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spelvi.com/sitemap.xml
