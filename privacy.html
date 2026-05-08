@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#265EBB" />
+
+  <title>Privacy Policy — Spelvi</title>
+  <meta name="description" content="How Spelvi handles your data. Short version: we store your lessons and progress on your device, we use anonymous crash diagnostics, and we never sell your data." />
+
+  <meta property="og:title" content="Privacy Policy — Spelvi" />
+  <meta property="og:url" content="https://spelvi.com/privacy.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="canonical" href="https://spelvi.com/privacy.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .legal { max-width: 720px; margin: 0 auto; padding: 28px 24px 96px; }
+    .legal h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(32px, 5vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+    .legal .meta { color: var(--fg-3); font-size: 14px; margin-bottom: 40px; }
+    .legal h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin: 36px 0 12px;
+      color: var(--fg-1);
+    }
+    .legal h3 { font-size: 16px; font-weight: 600; margin: 22px 0 6px; color: var(--fg-1); }
+    .legal p, .legal li { color: var(--fg-2); font-size: 16px; line-height: 1.6; }
+    .legal ul { padding-left: 22px; }
+    .legal li { margin-bottom: 8px; }
+    .legal table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 24px;
+      font-size: 14px;
+    }
+    .legal th, .legal td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .legal th {
+      background: var(--bg-soft);
+      font-weight: 600;
+      color: var(--fg-1);
+    }
+    .legal a { color: var(--primary); }
+    .legal .back {
+      display: inline-block;
+      font-size: 14px;
+      color: var(--fg-3);
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main class="legal">
+    <a href="/" class="back">← Back to spelvi.com</a>
+
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: <strong>May 8, 2026</strong></p>
+
+    <p>
+      Spelvi is a language-learning mobile app. This policy explains what
+      data the app collects, why, and how it is handled.
+      <strong>Short version:</strong> your lessons and progress are stored on your device,
+      we use anonymous crash diagnostics so we can fix bugs, and we never sell your data.
+    </p>
+
+    <h2>1. Who we are</h2>
+    <p>
+      Spelvi is operated by Maxim Bekmetov.
+      Contact: <a href="mailto:hello@spelvi.com">hello@spelvi.com</a>.
+      Privacy questions: <a href="mailto:privacy@spelvi.com">privacy@spelvi.com</a>.
+    </p>
+
+    <h2>2. Data we collect</h2>
+
+    <h3>2.1 Data you provide directly (stays on your device)</h3>
+    <ul>
+      <li>Words and phrases you save to flashcards, lessons, and folders.</li>
+      <li>Search history (you can clear it from Settings at any time).</li>
+      <li>Reading progress, audio playback positions, study streaks.</li>
+      <li>Learning preferences: target language, translation language, theme, daily goal.</li>
+    </ul>
+    <p>
+      All of the above is stored locally in your device's app sandbox
+      (SQLite database, SharedPreferences, audio cache).
+      It is not transmitted to us. Uninstalling the app removes it.
+    </p>
+
+    <h3>2.2 Diagnostic data sent to us when the app misbehaves</h3>
+
+    <p><strong>Crash diagnostics — Google Firebase Crashlytics</strong></p>
+    <ul>
+      <li>Stack trace of the crash, OS version, device model, app version, anonymous installation ID.</li>
+      <li>Crashlytics does not collect personal identifiers
+        (no name, no email, no IP address, no content of your study sessions).</li>
+      <li>Disabled in debug/test builds.</li>
+    </ul>
+
+    <p><strong>Server error diagnostics — Sentry</strong></p>
+    <ul>
+      <li>When our backend services (<code>api.spelvi.com</code>, <code>cdn.spelvi.com</code>)
+        encounter unhandled errors, an error report is sent to Sentry.</li>
+      <li>Reports include: error timestamp, stack trace, request URL path,
+        server hostname tag (e.g. <code>spelvi-api</code>, <code>gutendex</code>, <code>tatoeba-api</code>).</li>
+      <li>We have explicitly disabled collection of request bodies and user IP addresses
+        (<code>send_default_pii=False</code> in our Sentry SDK configuration).</li>
+    </ul>
+
+    <h3>2.3 Network requests we route on your behalf</h3>
+    <p>
+      Some features of Spelvi proxy upstream APIs through our infrastructure
+      so the app does not have to bundle third-party API keys.
+      We do not log the contents of these requests.
+    </p>
+    <ul>
+      <li><strong>Pixabay image search</strong> — your search query is forwarded to Pixabay through our server.</li>
+      <li><strong>Project Gutenberg / Gutendex</strong> — public-domain book catalog lookup.</li>
+      <li><strong>Tatoeba</strong> — public sentence corpus for grammar exercises.</li>
+      <li><strong>LibriVox / Internet Archive</strong> — public-domain audiobook delivery.</li>
+    </ul>
+
+    <h2>3. How we use the data</h2>
+    <ul>
+      <li>To provide language-learning features (dictionary, lessons, books, audio, grammar).</li>
+      <li>To diagnose crashes and server errors so we can fix them.</li>
+      <li>To understand aggregate, anonymous patterns of use (which features need work).</li>
+    </ul>
+    <p>
+      We <strong>do not</strong>:
+      sell your data, share it with advertisers, use it to track you across other apps or websites,
+      or build profiles for ad targeting.
+    </p>
+
+    <h2>4. Third-party services</h2>
+    <table>
+      <thead>
+        <tr><th>Service</th><th>Purpose</th><th>Data shared</th><th>Their policy</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Firebase Crashlytics</td>
+          <td>Crash reporting</td>
+          <td>Stack traces, anonymous install ID, OS/device info</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Sentry</td>
+          <td>Server error monitoring</td>
+          <td>Stack traces, error timestamps, server hostnames</td>
+          <td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Pixabay</td>
+          <td>Image search</td>
+          <td>Search query (proxied through our server)</td>
+          <td><a href="https://pixabay.com/service/privacy/" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Project Gutenberg</td>
+          <td>Public-domain books</td>
+          <td>Book ID requested</td>
+          <td><a href="https://www.gutenberg.org/policy/privacy_policy.html" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>LibriVox / Internet Archive</td>
+          <td>Audiobook delivery</td>
+          <td>Book title when audio is fetched</td>
+          <td><a href="https://archive.org/about/terms.php" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Tatoeba</td>
+          <td>Grammar sentence corpus</td>
+          <td>Language pair, query parameters</td>
+          <td><a href="https://tatoeba.org/eng/legal/terms_of_use" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Crash and error diagnostics may be transferred to servers in the United States,
+      where Google and Sentry primarily host their infrastructure.
+      By using Spelvi you consent to this international transfer, which is necessary
+      for the reliability of the service.
+    </p>
+
+    <h2>5. Data retention</h2>
+    <ul>
+      <li><strong>Local app data</strong> (lessons, progress, history): stored on your device only,
+        removed when you uninstall.</li>
+      <li><strong>Crashlytics reports</strong>: retained per Google's policy, typically 90 days.</li>
+      <li><strong>Sentry events</strong>: 30 days on the free tier we use.</li>
+    </ul>
+
+    <h2>6. Your rights (GDPR, UK GDPR, CCPA)</h2>
+    <p>
+      If you are in the European Union, EEA, United Kingdom, or California,
+      you have the right to access the diagnostic data we hold,
+      request its deletion, or object to its processing.
+      Note that diagnostic events are not linked to a personal identifier
+      and we typically cannot tie them back to a specific individual.
+    </p>
+    <p>
+      To exercise these rights or ask questions, email
+      <a href="mailto:privacy@spelvi.com">privacy@spelvi.com</a>.
+    </p>
+
+    <h2>7. Children's privacy</h2>
+    <p>
+      Spelvi is intended for users aged 13 and above. We do not knowingly collect personal
+      information from children under 13. If you believe a child has provided us with information,
+      please contact <a href="mailto:privacy@spelvi.com">privacy@spelvi.com</a>
+      and we will delete it.
+    </p>
+
+    <h2>8. Permissions used by the app</h2>
+    <ul>
+      <li><strong>Microphone</strong> — only when you use Speech-to-Text in dictation exercises.
+        Audio is processed by the operating system's on-device speech recognizer and is not transmitted to us.</li>
+      <li><strong>Storage</strong> — to download books, audiobooks, dictionaries, and the word-image archive.
+        Files live in the app's sandbox.</li>
+      <li><strong>Network</strong> — required to fetch books, audio, images, and grammar exercises.</li>
+    </ul>
+
+    <h2>9. Changes to this policy</h2>
+    <p>
+      We may update this policy from time to time. Material changes will be reflected
+      in the &ldquo;Effective date&rdquo; at the top. Continued use of Spelvi after changes
+      constitutes acceptance.
+    </p>
+
+    <h2>10. Contact</h2>
+    <ul>
+      <li>Privacy questions: <a href="mailto:privacy@spelvi.com">privacy@spelvi.com</a></li>
+      <li>General contact: <a href="mailto:hello@spelvi.com">hello@spelvi.com</a></li>
+      <li>Legal: <a href="mailto:legal@spelvi.com">legal@spelvi.com</a></li>
+    </ul>
+  </main>
+</body>
+</html>

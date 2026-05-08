@@ -19,7 +19,7 @@ python3 -m http.server 8000
 
 ## Deploy on GitHub Pages
 
-1. Create a public repo on GitHub: `spelvi-landing` (or any name)
+1. Create a public repo on GitHub: `spelviapp-landing` (or any name)
 2. From this folder:
 
    ```sh
@@ -27,7 +27,7 @@ python3 -m http.server 8000
    git add .
    git commit -m "initial landing page"
    git branch -M main
-   git remote add origin git@github.com:<your-user>/spelvi-landing.git
+   git remote add origin git@github.com:<your-user>/spelviapp-landing.git
    git push -u origin main
    ```
 
@@ -45,7 +45,7 @@ Add these records on `spelvi.com`:
 | A     | @     | `185.199.109.153`       |
 | A     | @     | `185.199.110.153`       |
 | A     | @     | `185.199.111.153`       |
-| CNAME | www   | `<your-user>.github.io` |
+| CNAME | www   | `spelviapp.github.io`   |
 
 After DNS propagates (5–60 min) the site will be at `https://spelvi.com`.
 
