@@ -27,13 +27,11 @@
     letter-spacing: -0.01em; margin: 0 0 6px;
   }
   .status-sub { color: var(--fg-3); font-size: 14px; margin: 0 0 20px; }
-  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 18%, transparent); }
-  .ok    { color: var(--mint-strong); }
-  .degraded { color: var(--accent-strong); }
-  .down  { color: var(--blush-strong, #E89AA6); }
-  .dot.ok { background: var(--mint-strong); }
-  .dot.degraded { background: var(--accent-strong); }
-  .dot.down { background: var(--blush-strong, #E89AA6); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; background: var(--fg-3); }
+  /* Status colour, keyed by status name: green = ok, amber = degraded, red = down */
+  .dot.operational { background: var(--mint-strong);   box-shadow: 0 0 0 4px color-mix(in srgb, var(--mint-strong) 22%, transparent); }
+  .dot.degraded    { background: var(--accent-strong); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-strong) 22%, transparent); }
+  .dot.down        { background: var(--danger);        box-shadow: 0 0 0 4px color-mix(in srgb, var(--danger) 22%, transparent); }
   .svc-list { display: flex; flex-direction: column; }
   .svc-row {
     display: flex; align-items: center; justify-content: space-between;
@@ -42,9 +40,16 @@
   .svc-row span:first-child { color: var(--fg-1); font-size: 15px; }
   .svc-pill {
     display: inline-flex; align-items: center; gap: 7px;
-    font-size: 13px; font-weight: 600;
+    font-size: 13px; font-weight: 600; color: var(--fg-2);
   }
+  .svc-pill.operational { color: var(--mint-ink); }
+  .svc-pill.degraded    { color: var(--accent-ink); }
+  .svc-pill.down        { color: var(--blush-ink); }
   .svc-pill .dot { width: 8px; height: 8px; box-shadow: none; }
+  /* Overall heading tinted to match status */
+  .status-head.operational { color: var(--mint-ink); }
+  .status-head.degraded    { color: var(--accent-ink); }
+  .status-head.down        { color: var(--blush-ink); }
 
   .releases { margin-top: 10px; }
   .release {
@@ -96,7 +101,7 @@
   <div class="narrow">
     <div class="sec-label reveal">Service status</div>
     <div class="status-card reveal" id="statusCard">
-      <div class="status-head"><span class="dot ok" id="overallDot"></span> <span id="overallText">All systems operational</span></div>
+      <div class="status-head operational" id="statusHead"><span class="dot operational" id="overallDot"></span> <span id="overallText">All systems operational</span></div>
       <p class="status-sub" id="statusSub">Checking…</p>
       <div class="svc-list" id="svcList"></div>
     </div>
@@ -146,6 +151,7 @@
       var dot = document.getElementById('overallDot');
       var txt = document.getElementById('overallText');
       dot.className = 'dot ' + overall;
+      document.getElementById('statusHead').className = 'status-head ' + overall;
       txt.textContent = overall === 'operational' ? 'All systems operational'
         : overall === 'degraded' ? 'Partial service disruption'
         : 'Service disruption';
