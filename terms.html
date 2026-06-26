@@ -1,218 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#265EBB" />
-
-  <title>Terms of Service — Spelvi</title>
-  <meta name="description" content="The rules of using Spelvi. Short version: use the app reasonably, don't try to break it, and we provide it as-is without warranty." />
-
-  <meta property="og:title" content="Terms of Service — Spelvi" />
-  <meta property="og:url" content="https://spelvi.com/terms.html" />
-  <meta property="og:type" content="website" />
-
-  <link rel="canonical" href="https://spelvi.com/terms.html" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="/styles.css" />
-  <style>
-    .legal { max-width: 720px; margin: 0 auto; padding: 28px 24px 96px; }
-    .legal h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(32px, 5vw, 44px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin: 0 0 8px;
-    }
-    .legal .meta { color: var(--fg-3); font-size: 14px; margin-bottom: 40px; }
-    .legal h2 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 500;
-      font-size: 22px;
-      letter-spacing: -0.01em;
-      margin: 36px 0 12px;
-      color: var(--fg-1);
-    }
-    .legal h3 { font-size: 16px; font-weight: 600; margin: 22px 0 6px; color: var(--fg-1); }
-    .legal p, .legal li { color: var(--fg-2); font-size: 16px; line-height: 1.6; }
-    .legal ul { padding-left: 22px; }
-    .legal li { margin-bottom: 8px; }
-    .legal a { color: var(--primary); }
-    .legal .back {
-      display: inline-block;
-      font-size: 14px;
-      color: var(--fg-3);
-      margin-bottom: 24px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — spelvi</title>
+<meta name="description" content="The terms of service for Spelvi — accounts, subscriptions, content, intellectual property, and liability.">
+<meta name="theme-color" content="#B8C5F2">
+<link rel="canonical" href="https://spelvi.com/terms.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="Terms of Service — spelvi">
+<meta property="og:description" content="The terms of service for Spelvi.">
+<meta property="og:url" content="https://spelvi.com/terms.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://spelvi.com/icon-1024.png">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <main class="legal">
-    <a href="/" class="back">← Back to spelvi.com</a>
 
-    <h1>Terms of Service</h1>
-    <p class="meta">Effective date: <strong>May 8, 2026</strong></p>
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="mono-s"><i>s</i></span><span class="wordmark-h">spelvi<b>.</b></span></a>
+    <span class="nav-spacer"></span>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg id="themeIco" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
+    <a href="index.html#get" class="btn">Get the app</a>
+  </div>
+</nav>
 
-    <p>
-      These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the Spelvi mobile application
-      and the website at <a href="https://spelvi.com">spelvi.com</a>
-      (collectively, &ldquo;Spelvi&rdquo; or the &ldquo;Service&rdquo;).
-      <strong>Short version:</strong> use the app reasonably, don't try to break it,
-      and we provide it as-is without warranty.
-    </p>
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal in">Legal</span>
+    <h1 class="page-title reveal in">Terms of <span class="mark"><span>Service</span></span></h1>
+    <p class="page-lead reveal in d1">The agreement between you and spelvi. We've kept it as readable as legal language allows — plain summaries lead each section.</p>
+    <div class="meta-row reveal in d1"><b>Last updated:</b> 26 June 2026 · <b>Effective:</b> at launch</div>
+  </div>
+</header>
 
-    <h2>1. Acceptance</h2>
-    <p>
-      By installing or using Spelvi you agree to these Terms. If you do not agree, do not use the Service.
-      We may update these Terms from time to time; the &ldquo;Effective date&rdquo; above will reflect
-      the latest revision. Continued use after a change constitutes acceptance of the updated Terms.
-    </p>
+<section class="section" style="padding-top:20px;">
+  <div class="wrap legal-grid">
+    <aside class="toc">
+      <div class="lbl">On this page</div>
+      <ol>
+        <li><a href="#accept">Acceptance</a></li>
+        <li><a href="#account">Your account</a></li>
+        <li><a href="#license">Licence to use</a></li>
+        <li><a href="#sub">Subscriptions</a></li>
+        <li><a href="#content">Content &amp; conduct</a></li>
+        <li><a href="#ip">Intellectual property</a></li>
+        <li><a href="#thirdparty">Third-party content</a></li>
+        <li><a href="#warranty">Disclaimers</a></li>
+        <li><a href="#liability">Liability</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </aside>
 
-    <h2>2. The Service</h2>
-    <p>
-      Spelvi is a language-learning mobile application offering:
-    </p>
-    <ul>
-      <li>A multilingual dictionary with definitions, synonyms, and pronunciation.</li>
-      <li>Structured lessons and grammar exercises generated from the public Tatoeba sentence corpus.</li>
-      <li>A reader for public-domain literature from Project Gutenberg, with optional audio narration from LibriVox.</li>
-      <li>Personal progress tracking, streaks, and learning preferences stored on your device.</li>
-    </ul>
-    <p>
-      We may add, change, or remove features at our discretion.
-    </p>
+    <div class="prose reveal">
+      <div class="callout" style="margin-bottom:36px;"><strong>The short version.</strong> Use spelvi for learning, keep your account secure, and don't misuse the service. Subscriptions renew until cancelled through your app store. The free tier and your saved words stay yours.</div>
 
-    <h2>3. Limited license</h2>
-    <p>
-      We grant you a personal, non-transferable, non-exclusive, revocable license to use Spelvi
-      for your own learning purposes, in accordance with these Terms.
-      The license does not include any rights to:
-    </p>
-    <ul>
-      <li>Resell, sublicense, or redistribute the application or its content.</li>
-      <li>Reverse-engineer, decompile, or disassemble the application except where allowed by law.</li>
-      <li>Remove or alter any proprietary notices.</li>
-      <li>Use Spelvi to build a competing product.</li>
-    </ul>
+      <h2 id="accept">1. Acceptance of these terms</h2>
+      <p>By creating an account or using the spelvi apps or website, you agree to these Terms of Service and to our <a class="link" href="privacy.html">Privacy Policy</a>. If you don't agree, please don't use spelvi. If you're using spelvi on behalf of an organisation, you confirm you're authorised to accept these terms for it.</p>
 
-    <h2>4. Acceptable use</h2>
-    <p>You agree not to:</p>
-    <ul>
-      <li>Abuse our backend services (<code>api.spelvi.com</code>, <code>cdn.spelvi.com</code>),
-        including automated scraping, denial-of-service attempts, or excessive request rates beyond normal app use.</li>
-      <li>Use Spelvi to violate any law or third-party right.</li>
-      <li>Circumvent technical limits, rate limits, or security measures.</li>
-      <li>Interfere with the operation of the Service for other users.</li>
-    </ul>
+      <h2 id="account">2. Your account</h2>
+      <p>You're responsible for keeping your login credentials secure and for activity under your account. You must be at least 13 years old to use spelvi. Provide accurate information when signing up, and let us know promptly if you suspect unauthorised access.</p>
 
-    <h2>5. Intellectual property</h2>
+      <h2 id="license">3. Licence to use spelvi</h2>
+      <p>We grant you a personal, non-exclusive, non-transferable, revocable licence to use spelvi for your own language learning. You agree not to:</p>
+      <ul>
+        <li>copy, resell, or commercially redistribute the service or its content;</li>
+        <li>reverse-engineer, scrape, or attempt to extract our dictionaries or models in bulk;</li>
+        <li>interfere with the service's operation, security, or other users' access;</li>
+        <li>use spelvi for anything unlawful.</li>
+      </ul>
 
-    <h3>5.1 Spelvi's IP</h3>
-    <p>
-      The Spelvi name, logo, design, source code, and original content are the property of Maxim Bekmetov.
-      All rights reserved except those expressly licensed by these Terms.
-    </p>
+      <h2 id="sub">4. Subscriptions &amp; billing</h2>
+      <p>spelvi offers a free tier and an optional <strong>Pro subscription</strong>. Pro is billed through the Apple App Store or Google Play and renews automatically until cancelled. You manage renewals and cancellations through your store account; cancelling stops future charges and keeps Pro active until the end of the current period. Refunds are handled under the relevant store's policies. Prices may change with notice; changes never apply to a period you've already paid for.</p>
 
-    <h3>5.2 Third-party content</h3>
-    <p>
-      Spelvi delivers content from public, openly licensed sources. We claim no ownership over these works
-      and we attempt to attribute them properly:
-    </p>
-    <ul>
-      <li><strong>Project Gutenberg</strong> — books in the public domain.
-        Distributed per the Project Gutenberg license at
-        <a href="https://www.gutenberg.org/policy/license.html" target="_blank" rel="noopener">gutenberg.org/policy/license.html</a>.</li>
-      <li><strong>LibriVox / Internet Archive</strong> — audiobooks recorded by volunteers and released into the public domain
-        (or under permissive licenses where noted).</li>
-      <li><strong>Tatoeba</strong> — sentence corpus, distributed under
-        <a href="https://creativecommons.org/licenses/by/2.0/fr/" target="_blank" rel="noopener">CC-BY 2.0 FR</a>.
-        Attribution: &copy; Tatoeba contributors.</li>
-      <li><strong>Pixabay</strong> — illustrative images, used per their
-        <a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener">license</a>.</li>
-    </ul>
-    <p>
-      A complete list of open-source software licenses bundled with Spelvi is available
-      from inside the app: Settings → About → Open Source Licenses.
-    </p>
+      <h2 id="content">5. Content &amp; acceptable use</h2>
+      <p>Some features let you create content — saved word lists, notes, recordings. You keep ownership of what you create and grant us only the limited rights needed to store, sync and display it back to you. Don't use spelvi to upload unlawful, infringing, or abusive material, or to attempt to disrupt the service for others.</p>
 
-    <h2>6. User content</h2>
-    <p>
-      Spelvi stores the words, phrases, and notes you save locally on your device.
-      You retain all rights to that content. We do not collect, transmit, or share it,
-      unless you explicitly export it (e.g. via the system Share sheet).
-    </p>
+      <h2 id="ip">6. Intellectual property</h2>
+      <p>spelvi, its name, the highlighter-“s” mark, design, software and original content are owned by us and protected by intellectual-property laws. These terms don't transfer any of our rights to you beyond the licence to use the app.</p>
 
-    <h2>7. Privacy</h2>
-    <p>
-      Your data is handled according to our <a href="/privacy.html">Privacy Policy</a>,
-      which is incorporated into these Terms by reference.
-    </p>
+      <h2 id="thirdparty">7. Third-party content</h2>
+      <p>spelvi includes public-domain books, matching audiobooks, and links to news articles from third parties. Those works are provided under their own terms; we don't claim ownership of public-domain material and aren't responsible for the accuracy of external news sources.</p>
 
-    <h2>8. Disclaimer of warranties</h2>
-    <p>
-      Spelvi is provided <strong>&ldquo;as is&rdquo;</strong> and <strong>&ldquo;as available&rdquo;</strong>,
-      without warranty of any kind, express or implied, including warranties of merchantability,
-      fitness for a particular purpose, or non-infringement.
-    </p>
-    <p>
-      We do not guarantee that:
-    </p>
-    <ul>
-      <li>The Service will be uninterrupted or error-free.</li>
-      <li>Translations, definitions, or grammar exercises are perfectly accurate.</li>
-      <li>The Service will achieve any specific learning outcome.</li>
-      <li>Backend services (api.spelvi.com, cdn.spelvi.com) will be available at all times;
-        we run them on best-effort basis.</li>
-    </ul>
+      <h2 id="warranty">8. Disclaimers</h2>
+      <p>spelvi is a learning aid provided “as is” and “as available.” While we work hard on accuracy, we don't guarantee that every definition, translation, pronunciation score, or AI explanation is error-free, or that the service will be uninterrupted. spelvi is not a substitute for professional or certified language assessment.</p>
 
-    <h2>9. Limitation of liability</h2>
-    <p>
-      To the maximum extent permitted by law, Maxim Bekmetov shall not be liable for any indirect,
-      incidental, consequential, special, or exemplary damages arising out of or relating to
-      your use of Spelvi, including loss of data, lost profits, or business interruption,
-      even if advised of the possibility of such damages.
-    </p>
-    <p>
-      Our total liability for direct damages shall not exceed the amount you paid for Spelvi
-      in the twelve months prior to the claim (which, for the free version of the app, is zero).
-    </p>
+      <h2 id="liability">9. Limitation of liability</h2>
+      <p>To the fullest extent permitted by law, spelvi and its team won't be liable for indirect, incidental, or consequential damages arising from your use of the service. Where liability can't be excluded, it's limited to the amount you paid us in the twelve months before the claim. Nothing here limits rights you have under mandatory local consumer law.</p>
 
-    <h2>10. Termination</h2>
-    <p>
-      You may stop using Spelvi at any time by uninstalling the app.
-      We may suspend or terminate your access if you violate these Terms or abuse the Service.
-      Termination does not affect provisions that by their nature should survive,
-      including IP, disclaimers, and limitation of liability.
-    </p>
+      <h2 id="termination">10. Termination</h2>
+      <p>You can stop using spelvi and delete your account at any time from Settings. We may suspend or terminate access if you breach these terms or use the service in a way that risks harm to others or to spelvi. On termination, your licence ends; you can export your data beforehand.</p>
 
-    <h2>11. Governing law</h2>
-    <p>
-      These Terms are governed by the laws applicable to Maxim Bekmetov's jurisdiction.
-      Any disputes shall be resolved in the courts of that jurisdiction, unless local consumer-protection
-      law guarantees you a different venue.
-    </p>
+      <h2 id="changes">11. Changes to these terms</h2>
+      <p>We may update these terms as spelvi evolves. We'll revise the date above and, for material changes, notify you in the app or by email. Continuing to use spelvi after an update means you accept the revised terms.</p>
 
-    <h2>12. Severability</h2>
-    <p>
-      If any provision of these Terms is held unenforceable, the remaining provisions
-      remain in full effect.
-    </p>
+      <h2 id="contact">12. Contact</h2>
+      <p>Questions about these terms? Reach us at <a class="link" href="mailto:hello@spelvi.com">hello@spelvi.com</a>.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>13. Contact</h2>
-    <ul>
-      <li>General contact: <a href="mailto:hello@spelvi.com">hello@spelvi.com</a></li>
-      <li>Legal: <a href="mailto:legal@spelvi.com">legal@spelvi.com</a></li>
-      <li>Privacy: <a href="mailto:privacy@spelvi.com">privacy@spelvi.com</a></li>
-    </ul>
-  </main>
+<footer>
+  <div class="wrap foot">
+    <div class="foot-l"><span class="mono-s" style="width:26px;height:26px;border-radius:8px;"><i style="font-size:17px;">s</i></span>© 2026 spelvi · hello@spelvi.com</div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html" class="active">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
 </body>
 </html>

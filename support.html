@@ -1,239 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#265EBB" />
-
-  <title>Support — Spelvi</title>
-  <meta name="description" content="Help, FAQ, and contact for Spelvi — the language-learning app that combines a smart dictionary, lessons, grammar drills, and audiobooks." />
-
-  <meta property="og:title" content="Support — Spelvi" />
-  <meta property="og:url" content="https://spelvi.com/support.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://spelvi.com/icon-1024.png" />
-
-  <link rel="canonical" href="https://spelvi.com/support.html" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="/styles.css" />
-  <style>
-    .doc { max-width: 720px; margin: 0 auto; padding: 28px 24px 96px; }
-    .doc h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(32px, 5vw, 44px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin: 0 0 8px;
-    }
-    .doc .lede { color: var(--fg-2); font-size: 17px; margin: 0 0 36px; }
-    .doc h2 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 500;
-      font-size: 24px;
-      letter-spacing: -0.01em;
-      margin: 44px 0 20px;
-      color: var(--fg-1);
-    }
-    .doc h3 { font-size: 17px; font-weight: 600; margin: 20px 0 6px; color: var(--fg-1); }
-    .doc p, .doc li { color: var(--fg-2); font-size: 16px; line-height: 1.6; }
-    .doc ul { padding-left: 22px; }
-    .doc li { margin-bottom: 8px; }
-    .doc a { color: var(--primary); }
-    .doc .back {
-      display: inline-block;
-      font-size: 14px;
-      color: var(--fg-3);
-      margin-bottom: 24px;
-    }
-    .contact-card {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin: 24px 0 0;
-    }
-    .contact-card p { margin: 0 0 8px; font-size: 15px; }
-    .contact-card p:last-child { margin: 0; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 18px 0;
-    }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-item h3 { margin: 0 0 6px; }
-    .faq-item p { margin: 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — spelvi</title>
+<meta name="description" content="Help centre and FAQ for Spelvi — getting started, features, account and data, and how to contact us.">
+<meta name="theme-color" content="#B8C5F2">
+<link rel="canonical" href="https://spelvi.com/support.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="Support — spelvi">
+<meta property="og:description" content="Help centre and FAQ for Spelvi.">
+<meta property="og:url" content="https://spelvi.com/support.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://spelvi.com/icon-1024.png">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .search-help {
+    display: flex; align-items: center; gap: 12px; background: var(--surface);
+    border: 1px solid var(--border-strong); border-radius: var(--radius-pill);
+    padding: 14px 22px; max-width: 520px; box-shadow: var(--shadow-1); margin-top: 8px;
+  }
+  .search-help svg { width: 19px; height: 19px; color: var(--fg-3); flex: none; }
+  .search-help input { border: none; outline: none; background: none; font-family: var(--font-ui); font-size: 16px; color: var(--fg-1); width: 100%; }
+  .search-help input::placeholder { color: var(--fg-3); }
+  .faq-cat { font-family: var(--font-display); font-weight: 500; font-size: 24px; letter-spacing: -0.01em; margin: 0 0 4px; }
+</style>
 </head>
 <body>
-  <main class="doc">
-    <a href="/" class="back">← Back to spelvi.com</a>
 
-    <h1>Support</h1>
-    <p class="lede">
-      Stuck somewhere or have feedback? Most answers are below.
-      Anything else — drop a line at the email at the bottom of the page.
-    </p>
-
-    <div class="contact-card">
-      <p>📮 <strong>Contact:</strong> <a href="mailto:support@spelvi.com">support@spelvi.com</a></p>
-      <p>Replies typically within 1–2 business days.</p>
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="mono-s"><i>s</i></span><span class="wordmark-h">spelvi<b>.</b></span></a>
+    <span class="nav-spacer"></span>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="about.html">About</a>
+      <a href="support.html" class="active">Support</a>
     </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg id="themeIco" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
+    <a href="index.html#get" class="btn">Get the app</a>
+  </div>
+</nav>
 
-    <h2>Getting started</h2>
-
-    <div class="faq-item">
-      <h3>Where do I download Spelvi?</h3>
-      <p>
-        Spelvi is in late development. Apple App Store and Google Play listings are coming soon —
-        sign up for launch updates from the homepage and you'll be the first to know.
-      </p>
+<header class="page-hero">
+  <div class="narrow">
+    <span class="eyebrow reveal in">Help centre</span>
+    <h1 class="page-title reveal in">How can we <span class="mark mint"><span>help?</span></span></h1>
+    <p class="page-lead reveal in d1">Answers to the questions we hear most. Still stuck? We read every message — usually back within a day.</p>
+    <div class="search-help reveal in d2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg>
+      <input id="faqSearch" type="text" placeholder="Search help…" aria-label="Search help">
     </div>
+  </div>
+</header>
 
-    <div class="faq-item">
-      <h3>What languages does Spelvi support?</h3>
-      <p>
-        The app interface is available in nine languages: English, French, German, Spanish, Portuguese,
-        Russian, Japanese, Chinese, and Hindi. The dictionary covers many more for word lookup,
-        with deepest support for English ↔ Russian.
-      </p>
+<section class="section">
+  <div class="narrow">
+    <div class="faq" id="faq">
+      <h3 class="faq-cat reveal" style="margin-top:8px;">Getting started</h3>
+      <details class="reveal" open>
+        <summary><span class="qcat">general</span> When does spelvi launch?<span class="plus"></span></summary>
+        <div class="ans">spelvi is in final testing and launches on <strong>iOS &amp; Android in 2026</strong>. Join the launch list on the <a href="index.html#get">home page</a> and we'll email you the moment it's live — no spam in between.</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="qcat">general</span> Which languages are supported?<span class="plus"></span></summary>
+        <div class="ans">At launch spelvi ships with full dictionaries for <strong>nine languages</strong>, each with definitions, IPA pronunciation, synonyms and idioms. Grammar lessons are CEFR-graded from A1 to C2. More languages are on the roadmap.</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="qcat">general</span> Is spelvi free?<span class="plus"></span></summary>
+        <div class="ans">The core dictionary, lessons, reader and progress tracking — including <strong>free cloud backup</strong> — are free to use. A Pro plan unlocks unlimited AI explanations, advanced pronunciation analysis and the full audiobook library. You'll never lose access to words you've already saved.</div>
+      </details>
+
+      <h3 class="faq-cat reveal" style="margin-top:40px;">Learning &amp; features</h3>
+      <details class="reveal">
+        <summary><span class="qcat">dictionary</span> How does the dictionary work across the app?<span class="plus"></span></summary>
+        <div class="ans">Tap any word — in a lesson, a book, or the news reader — and the same rich entry appears: definition, pronunciation, part of speech, examples and a one-tap <strong>Save</strong>. No copy-paste, no switching apps. Saved words sync to every device on your account.</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="qcat">speaking</span> How is pronunciation scored?<span class="plus"></span></summary>
+        <div class="ans">Speak a word or sentence and spelvi compares your audio against native models in real time, returning a score out of 100 plus the exact sounds to focus on. Audio is processed for scoring and is <strong>not stored</strong> unless you choose to save a recording.</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="qcat">ai</span> What can the AI help with?<span class="plus"></span></summary>
+        <div class="ans">Three things: explaining a word <em>in the exact sentence</em> you found it, turning your saved words into a short story for review, and unpacking why a grammar answer was wrong. It's a tutor for the moment you're stuck, not a chatbot to wander in.</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="qcat">reading</span> Where do the books and news come from?<span class="plus"></span></summary>
+        <div class="ans">Books are <strong>public-domain titles</strong> with matching audiobooks, so you can read and listen together. The news reader pulls level-appropriate articles you can tap through word by word. Everything supports one-tap lookup.</div>
+      </details>
+
+      <h3 class="faq-cat reveal" style="margin-top:40px;">Account &amp; data</h3>
+      <details class="reveal">
+        <summary><span class="qcat">account</span> Does my progress sync between devices?<span class="plus"></span></summary>
+        <div class="ans">Yes. Your saved words, streaks and lesson history back up to the cloud for free and follow your account across iOS and Android. Sign in on a new device and everything is there.</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="qcat">account</span> Can I export or delete my data?<span class="plus"></span></summary>
+        <div class="ans">Anytime. Delete your account and all synced data directly in the app from <strong>Settings → Delete account</strong>. We don't sell your data — see our <a href="privacy.html">Privacy Policy</a> for the details.</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="qcat">billing</span> How do I manage or cancel Pro?<span class="plus"></span></summary>
+        <div class="ans">Pro is billed through the App Store or Google Play, so you manage and cancel it from your store subscriptions. Cancelling keeps Pro active until the end of the period, then returns you to the free plan with all saved words intact.</div>
+      </details>
     </div>
+    <p class="callout reveal" style="margin-top:28px;" id="noResults" hidden>No help articles match that search. Try a different word, or <a href="mailto:hello@spelvi.com" class="link" style="color:var(--primary-strong);font-weight:600;">email us directly</a>.</p>
+  </div>
+</section>
 
-    <div class="faq-item">
-      <h3>Is Spelvi free?</h3>
-      <p>
-        Yes — the core experience is free, with no ads. An optional Spelvi Pro subscription unlocks
-        extras like higher-level (C1–C2) grammar, neural voice and pronunciation scoring, offline
-        audiobooks, and full statistics — but the essentials, including free cloud backup, stay free.
-      </p>
+<section class="section">
+  <div class="wrap">
+    <div class="sec-label reveal">Still need a hand?</div>
+    <h2 class="sec-title reveal" style="margin-bottom:28px;">Talk to a human.</h2>
+    <div class="contact-grid">
+      <a class="contact reveal d1" href="mailto:hello@spelvi.com">
+        <div class="ico i-peri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h4>Email support</h4>
+        <p>The fastest way to reach us. We reply within one business day, every message read by a person.</p>
+        <span class="go">hello@spelvi.com →</span>
+      </a>
+      <a class="contact reveal d2" href="#">
+        <div class="ico i-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3.4A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
+        <h4>In-app chat</h4>
+        <p>Once you've installed spelvi, tap Settings → Help to chat with us right inside the app.</p>
+        <span class="go">Open in app →</span>
+      </a>
+      <a class="contact reveal d3" href="#">
+        <div class="ico i-lav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7M12 17h.01"/></svg></div>
+        <h4>Status &amp; updates</h4>
+        <p>Check service status and read what's new in each release, including upcoming languages.</p>
+        <span class="go">View changelog →</span>
+      </a>
     </div>
+  </div>
+</section>
 
-    <h2>Using the app</h2>
-
-    <div class="faq-item">
-      <h3>How do I change my target language?</h3>
-      <p>
-        Settings → Languages → choose &ldquo;Learning language&rdquo; (the language you're studying)
-        and &ldquo;Translation language&rdquo; (your native language).
-      </p>
+<footer>
+  <div class="wrap foot">
+    <div class="foot-l"><span class="mono-s" style="width:26px;height:26px;border-radius:8px;"><i style="font-size:17px;">s</i></span>© 2026 spelvi · hello@spelvi.com</div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="support.html" class="active">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
+  </div>
+</footer>
 
-    <div class="faq-item">
-      <h3>How do I create a flashcard set?</h3>
-      <p>
-        Open Lessons → tap the &ldquo;+&rdquo; button → choose &ldquo;New flashcard set&rdquo;.
-        You can then add words manually or import them from your search history.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>The audio for a book isn't playing.</h3>
-      <p>
-        Audio comes from LibriVox, which doesn't have recordings for every Project Gutenberg book.
-        If a book has no audio, the playback button will be disabled.
-        Try one of the suggested books on the Reader home — those have audio confirmed.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I use Spelvi offline?</h3>
-      <p>
-        Mostly yes. The dictionary databases, downloaded books, audiobooks, and your flashcards
-        all work offline once they've been fetched. Live searches (Pixabay images, online dictionary lookups)
-        require connectivity.
-      </p>
-    </div>
-
-    <h2>Data and privacy</h2>
-
-    <div class="faq-item">
-      <h3>Where is my progress stored?</h3>
-      <p>
-        On your device first. Spelvi keeps a local SQLite database with your lessons, flashcards,
-        progress streaks, and reading positions, and the app is fully usable without an account.
-        If you sign in, that data is also backed up to our servers so it can sync across your devices.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Will I lose my data after an update?</h3>
-      <p>
-        No — local data persists across app updates. Uninstalling removes the local copy, but if you've
-        signed in, your progress is backed up to the cloud for free and restores when you sign back in.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>How do I reset all progress?</h3>
-      <p>
-        Settings → Advanced → &ldquo;Reset all data&rdquo;. This is irreversible.
-        Alternatively, delete and reinstall the app for the same effect.
-      </p>
-    </div>
-
-    <div class="faq-item" id="delete-account">
-      <h3>How do I delete my account and data?</h3>
-      <p>
-        If you signed in, you can delete your account directly in the app:
-        Settings → &ldquo;Delete account&rdquo;. This permanently removes your account
-        record, sign-in identity, and all data synced to our servers.
-        Prefer to request it by email? Write to
-        <a href="mailto:privacy@spelvi.com?subject=Account%20deletion%20request">privacy@spelvi.com</a>
-        from your account email address and we'll delete your account and associated data,
-        typically within 30 days. Learning data stored only on your device is removed when you
-        uninstall the app.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>What about my privacy?</h3>
-      <p>
-        See the <a href="/privacy.html">Privacy Policy</a> for the full picture.
-        Short version: your lessons live on your device (and, if you sign in, in an account-linked
-        backup on our servers), we collect anonymous crash and usage diagnostics for stability,
-        and we never sell your data.
-      </p>
-    </div>
-
-    <h2>Reporting issues</h2>
-
-    <div class="faq-item">
-      <h3>I found a bug.</h3>
-      <p>
-        Send a description to <a href="mailto:support@spelvi.com">support@spelvi.com</a>.
-        If you can include: device model, OS version, app version
-        (Settings → About — bottom of the screen),
-        and steps to reproduce — we can fix it much faster.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>I want to suggest a feature.</h3>
-      <p>
-        Same email. We read every message and prioritize based on demand.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h3>I'm a researcher / journalist / educator interested in Spelvi.</h3>
-      <p>
-        Drop us a line at <a href="mailto:hello@spelvi.com">hello@spelvi.com</a> —
-        we're happy to talk about the project.
-      </p>
-    </div>
-
-    <h2>Legal</h2>
-    <ul>
-      <li><a href="/privacy.html">Privacy Policy</a></li>
-      <li><a href="/terms.html">Terms of Service</a></li>
-    </ul>
-  </main>
+<script src="site.js"></script>
+<script>
+(function () {
+  var input = document.getElementById('faqSearch');
+  var items = [].slice.call(document.querySelectorAll('#faq details'));
+  var cats = [].slice.call(document.querySelectorAll('#faq .faq-cat'));
+  var none = document.getElementById('noResults');
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    var any = false;
+    items.forEach(function (d) {
+      var hit = !q || d.textContent.toLowerCase().indexOf(q) > -1;
+      d.style.display = hit ? '' : 'none';
+      if (hit) any = true;
+      if (q && hit) d.open = true;
+    });
+    cats.forEach(function (c) {
+      // hide a category heading if all following details until next heading are hidden
+      var n = c.nextElementSibling, visible = false;
+      while (n && !n.classList.contains('faq-cat')) {
+        if (n.tagName === 'DETAILS' && n.style.display !== 'none') visible = true;
+        n = n.nextElementSibling;
+      }
+      c.style.display = (!q || visible) ? '' : 'none';
+    });
+    none.hidden = any;
+  });
+})();
+</script>
 </body>
 </html>

@@ -1,196 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#265EBB" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — spelvi</title>
+<meta name="description" content="The story behind Spelvi — a calm, focused language-learning app: smart dictionary, CEFR grammar, AI help, pronunciation, books and news.">
+<meta name="theme-color" content="#B8C5F2">
+<link rel="canonical" href="https://spelvi.com/about.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="About — spelvi">
+<meta property="og:description" content="The story behind Spelvi — a calm, focused language-learning app.">
+<meta property="og:url" content="https://spelvi.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://spelvi.com/icon-1024.png">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* About-specific */
+  .name-card {
+    display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl);
+    padding: 30px; box-shadow: var(--shadow-1); margin-top: 8px;
+  }
+  .name-glyph {
+    width: 120px; height: 120px; border-radius: 28px; background: var(--butter-soft);
+    display: grid; place-items: center; position: relative; overflow: hidden; flex: none;
+    box-shadow: inset 0 0 0 1px var(--border-strong);
+  }
+  .name-glyph::before { content: ""; position: absolute; left: 14px; right: 14px; top: 54%; height: 30px; background: var(--butter-strong); transform: rotate(-7deg); border-radius: 4px; }
+  .name-glyph i { position: relative; z-index: 1; font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 78px; color: var(--primary-ink); line-height: 1; transform: translateY(-2px); }
+  .name-breakdown { display: flex; gap: 10px; flex-wrap: wrap; margin: 4px 0 14px; }
+  .morph { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: var(--radius-pill); }
+  .morph.a { background: var(--primary-soft); color: var(--primary-ink); }
+  .morph.b { background: var(--mint-soft); color: var(--mint-ink); }
+  .morph.c { background: var(--lavender-soft); color: var(--lavender-ink); }
+  .name-card p { font-size: 15.5px; line-height: 1.6; color: var(--fg-2); margin: 0; }
+  .name-card .ipa { font-family: var(--font-mono); color: var(--primary-strong); }
 
-  <title>About — Spelvi</title>
-  <meta name="description" content="Spelvi is Swedish for 'we play' — a calm, focused language-learning app built around a smart dictionary, structured lessons, public-domain literature, and audio narrations." />
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .prin {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;
+    transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med);
+  }
+  .prin:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); }
+  .prin .n { font-family: var(--font-mono); font-size: 13px; color: var(--fg-3); }
+  .prin h3 { font-family: var(--font-display); font-weight: 500; font-size: 23px; letter-spacing: -0.01em; margin: 14px 0 8px; }
+  .prin p { font-size: 14.5px; color: var(--fg-2); line-height: 1.55; margin: 0; }
 
-  <meta property="og:title" content="About — Spelvi" />
-  <meta property="og:description" content="A language-learning app built around a smart dictionary, structured lessons, books, and audio." />
-  <meta property="og:url" content="https://spelvi.com/about.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://spelvi.com/icon-1024.png" />
+  .num-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .num-stat { text-align: left; }
+  .num-stat .k { font-family: var(--font-display); font-size: clamp(40px, 5vw, 60px); font-weight: 500; letter-spacing: -0.025em; line-height: 1; }
+  .num-stat .l { font-size: 14px; color: var(--fg-2); margin-top: 10px; max-width: 22ch; }
+  .num-stat.a .k { color: var(--primary-strong); }
+  .num-stat.b .k { color: var(--mint-strong); }
+  .num-stat.c .k { color: var(--accent-strong); }
+  .num-stat.d .k { color: var(--lavender-strong); }
 
-  <link rel="canonical" href="https://spelvi.com/about.html" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  .story { font-size: 18px; line-height: 1.75; color: var(--fg-2); }
+  .story p { margin: 0 0 20px; }
+  .story strong { color: var(--fg-1); font-weight: 600; }
+  .lead-big { font-family: var(--font-display); font-weight: 500; font-size: clamp(24px, 3vw, 32px); line-height: 1.3; letter-spacing: -0.01em; color: var(--fg-1); }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="/styles.css" />
-  <style>
-    .doc { max-width: 720px; margin: 0 auto; padding: 28px 24px 96px; }
-    .doc h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin: 0 0 16px;
-    }
-    .doc .lede {
-      color: var(--fg-2);
-      font-size: 19px;
-      line-height: 1.55;
-      margin: 0 0 40px;
-    }
-    .doc h2 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 500;
-      font-size: 26px;
-      letter-spacing: -0.01em;
-      margin: 48px 0 16px;
-      color: var(--fg-1);
-    }
-    .doc h3 {
-      font-size: 17px;
-      font-weight: 600;
-      margin: 24px 0 6px;
-      color: var(--fg-1);
-    }
-    .doc p, .doc li { color: var(--fg-2); font-size: 17px; line-height: 1.65; }
-    .doc ul { padding-left: 22px; }
-    .doc li { margin-bottom: 8px; }
-    .doc a { color: var(--primary); }
-    .doc .back {
-      display: inline-block;
-      font-size: 14px;
-      color: var(--fg-3);
-      margin-bottom: 24px;
-    }
-    .etym {
-      background: var(--bg-soft);
-      border-left: 3px solid var(--primary);
-      padding: 18px 22px;
-      border-radius: 8px;
-      margin: 24px 0;
-      font-size: 16px;
-    }
-    .etym strong { color: var(--fg-1); }
-    .credit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin: 16px 0 8px;
-    }
-    .credit-grid article {
-      padding: 16px 18px;
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-    .credit-grid article h3 { margin: 0 0 6px; font-size: 15px; }
-    .credit-grid article p { margin: 0; font-size: 14px; }
-  </style>
+  @media (max-width: 760px) {
+    .name-card { grid-template-columns: 1fr; text-align: center; }
+    .name-glyph { margin-inline: auto; }
+    .name-breakdown { justify-content: center; }
+    .principles { grid-template-columns: 1fr; }
+    .num-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
-  <main class="doc">
-    <a href="/" class="back">← Back to spelvi.com</a>
 
-    <h1>About Spelvi</h1>
-    <p class="lede">
-      Spelvi is a calm, focused language-learning app built around four ideas:
-      a smart dictionary you actually want to open, lessons that respect your time,
-      books and audiobooks for full immersion, and progress you can feel.
-    </p>
-
-    <h2>The name</h2>
-    <p>
-      &ldquo;Spelvi&rdquo; is Swedish for <strong>we play</strong> — <em>spel</em> (game, play) + <em>vi</em> (we).
-    </p>
-    <div class="etym">
-      <strong>Why a Swedish word?</strong> Because language learning works best as play, not drill —
-      and because the Scandinavian languages have a clean, frictionless quality
-      that fits the tone we wanted for the app. Babbel did it with German, Memrise with English;
-      we did it with Swedish.
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="mono-s"><i>s</i></span><span class="wordmark-h">spelvi<b>.</b></span></a>
+    <span class="nav-spacer"></span>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="about.html" class="active">About</a>
+      <a href="support.html">Support</a>
     </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg id="themeIco" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
+    <a href="index.html#get" class="btn">Get the app</a>
+  </div>
+</nav>
 
-    <h2>What's inside</h2>
+<header class="page-hero">
+  <div class="narrow">
+    <span class="eyebrow reveal in">Our story</span>
+    <h1 class="page-title reveal in">Learning a language<br>should feel like <span class="mark"><span>play.</span></span></h1>
+    <p class="page-lead reveal in d1">spelvi began with a small frustration: the tools for learning a language were scattered across a dozen apps, and none of them felt calm. We set out to build one focused place instead.</p>
+  </div>
+</header>
 
-    <h3>A dictionary that thinks</h3>
-    <p>
-      Lookups search several trusted sources at once — definitions, idioms,
-      synonyms, and translations — and merge them into one clean answer.
-      Definitions, pronunciation, etymology, examples, and audio in one screen.
-    </p>
+<section class="section">
+  <div class="narrow reveal">
+    <div class="sec-label">The name</div>
+    <div class="name-card">
+      <div class="name-glyph"><i>s</i></div>
+      <div>
+        <div class="name-breakdown">
+          <span class="morph a">spel</span>
+          <span class="morph b">vi</span>
+          <span class="morph c">sw. “we play”</span>
+        </div>
+        <p><strong>spelvi</strong> <span class="ipa">/ˈspɛl.vi/</span> is Swedish for <em>“we play”</em> — <strong>spel</strong> (game, play) + <strong>vi</strong> (we). The name carries the whole idea: language is something you practice by doing, out loud, a little every day. The dot is our periwinkle accent; the <strong>s</strong> wears a highlighter stroke, because the best learning happens when you mark up the world around you.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h3>Lessons that stick</h3>
-    <p>
-      Ten study techniques (image association, listen-and-repeat, spaced flashcards, dictation, etc.)
-      paired with twelve grammar exercise types drawn from a large bank of real example
-      sentences across nine languages. Grammar is graded by CEFR level,
-      from A1 all the way to C2, so practice meets you where you are.
-    </p>
+<section class="section">
+  <div class="narrow">
+    <div class="story">
+      <p class="reveal"><span class="lead-big">We think most language apps optimize for the wrong thing — streaks for their own sake, points that don't mean anything.</span></p>
+      <p class="reveal d1">spelvi optimizes for <strong>real comprehension</strong>. A dictionary that merges definitions, pronunciation, synonyms and idioms into one tap. Grammar drills graded honestly against the CEFR scale, from A1 to C2. AI that explains a word <em>in the exact sentence you found it</em> — not in the abstract.</p>
+      <p class="reveal d1">And then the part everyone skips: speaking. spelvi scores your pronunciation in real time, so saying a word out loud stops being the scary part. Around all of it sits a quiet library — public-domain books with matching audiobooks, plus a built-in news reader — every word one tap from its meaning.</p>
+      <p class="reveal d1">No noise. No dark patterns. One calm, focused app that backs up to the cloud for free and follows you across devices.</p>
+    </div>
+  </div>
+</section>
 
-    <h3>AI when you're stuck</h3>
-    <p>
-      Ask for a word explained in the exact context you found it, turn a set of words you're
-      learning into a short readable story, or have a grammar mistake unpacked in plain language.
-      AI is there when you need it, never in the way.
-    </p>
+<section class="section">
+  <div class="wrap">
+    <div class="sec-label reveal">What we believe</div>
+    <h2 class="sec-title reveal" style="margin-bottom:32px;">Five principles.</h2>
+    <div class="principles">
+      <div class="prin reveal d1"><div class="n">01</div><h3>Calm over loud</h3><p>No streak-shaming, no manipulative nudges. Gentle momentum that respects your attention.</p></div>
+      <div class="prin reveal d2"><div class="n">02</div><h3>Context is everything</h3><p>A word means nothing alone. We always show it in the sentence, the book, the conversation it lives in.</p></div>
+      <div class="prin reveal d3"><div class="n">03</div><h3>Speaking counts</h3><p>You learn a language by saying it. Pronunciation scoring makes the hardest part the most rewarding.</p></div>
+      <div class="prin reveal d1"><div class="n">04</div><h3>Honest progress</h3><p>CEFR-graded, paced to what you actually retain. Charts that tell the truth, not flatter you.</p></div>
+      <div class="prin reveal d2"><div class="n">05</div><h3>Yours to keep</h3><p>Free cloud backup, export anytime, no lock-in. Your saved words belong to you.</p></div>
+    </div>
+  </div>
+</section>
 
-    <h3>Speak and be heard</h3>
-    <p>
-      Practice pronunciation out loud and get scored on how close you are —
-      so speaking, usually the part people skip, becomes something you actually do.
-    </p>
+<section class="section">
+  <div class="wrap">
+    <div class="num-row">
+      <div class="num-stat a reveal"><div class="k">9</div><div class="l">Languages, with full dictionaries</div></div>
+      <div class="num-stat b reveal d1"><div class="k">A1–C2</div><div class="l">CEFR-graded grammar lessons</div></div>
+      <div class="num-stat c reveal d2"><div class="k">10</div><div class="l">Study techniques built in</div></div>
+      <div class="num-stat d reveal d3"><div class="k">2026</div><div class="l">Launching on iOS &amp; Android</div></div>
+    </div>
+  </div>
+</section>
 
-    <h3>Read everything</h3>
-    <p>
-      Tens of thousands of public-domain books with one-tap word lookup and
-      matching audiobook narrations, plus a built-in news reader that brings
-      real-world articles into the same lookup experience. Read, listen, mark up, repeat.
-    </p>
+<section class="cta-band">
+  <div class="narrow reveal">
+    <h2>Come play with us.</h2>
+    <p>spelvi is launching soon. Be first in line.</p>
+    <a href="index.html#get" class="btn">Get launch updates</a>
+  </div>
+</section>
 
-    <h3>Progress you can see</h3>
-    <p>
-      Streaks, daily goals, weekly bar charts, and per-track breakdowns —
-      visible enough to motivate, quiet enough not to nag. Sign in and your progress is
-      backed up to the cloud for free and follows you across devices.
-    </p>
+<footer>
+  <div class="wrap foot">
+    <div class="foot-l"><span class="mono-s" style="width:26px;height:26px;border-radius:8px;"><i style="font-size:17px;">s</i></span>© 2026 spelvi · hello@spelvi.com</div>
+    <div class="foot-links">
+      <a href="about.html" class="active">About</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
 
-    <h2>Built on open foundations</h2>
-    <p>
-      Spelvi stands on an enormous amount of openly-licensed work — public-domain
-      literature, open dictionaries and example sentences, and open-source software.
-      We're grateful to the communities behind it. Full credits and licenses are
-      listed inside the app.
-    </p>
-
-    <h2>What's coming</h2>
-    <ul>
-      <li>Wider language coverage in the offline dictionary.</li>
-      <li>Listening exercises generated from book audio.</li>
-      <li>Android Home Screen widgets (iOS widgets are already in).</li>
-      <li>Eventually: shared lesson packs.</li>
-    </ul>
-    <p>
-      No timeline promises. The thing is being built deliberately, in the open.
-    </p>
-
-    <h2>Made by</h2>
-    <p>
-      Spelvi is independently built and operated by Maxim Bekmetov.
-      No investors, no ads, no engagement-maximizing dark patterns —
-      just a tool I wanted to use myself.
-    </p>
-    <p>
-      Drop a line: <a href="mailto:hello@spelvi.com">hello@spelvi.com</a>.
-    </p>
-
-    <h2>Legal</h2>
-    <ul>
-      <li><a href="/privacy.html">Privacy Policy</a></li>
-      <li><a href="/terms.html">Terms of Service</a></li>
-      <li><a href="/support.html">Support &amp; FAQ</a></li>
-    </ul>
-  </main>
+<script src="site.js"></script>
 </body>
 </html>
