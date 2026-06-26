@@ -6,11 +6,12 @@
   <meta name="theme-color" content="#265EBB" />
 
   <title>Privacy Policy — Spelvi</title>
-  <meta name="description" content="How Spelvi handles your data. Short version: we store your lessons and progress on your device, we use anonymous crash diagnostics, and we never sell your data." />
+  <meta name="description" content="How Spelvi handles your data. Your learning data lives on your device; signing in adds an optional cloud backup. We use crash and usage diagnostics, and we never sell your data." />
 
   <meta property="og:title" content="Privacy Policy — Spelvi" />
   <meta property="og:url" content="https://spelvi.com/privacy.html" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://spelvi.com/icon-1024.png" />
 
   <link rel="canonical" href="https://spelvi.com/privacy.html" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -77,13 +78,16 @@
     <a href="/" class="back">← Back to spelvi.com</a>
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: <strong>May 8, 2026</strong></p>
+    <p class="meta">Effective date: <strong>June 26, 2026</strong></p>
 
     <p>
       Spelvi is a language-learning mobile app. This policy explains what
       data the app collects, why, and how it is handled.
-      <strong>Short version:</strong> your lessons and progress are stored on your device,
-      we use anonymous crash diagnostics so we can fix bugs, and we never sell your data.
+      <strong>Short version:</strong> your lessons and progress are stored on your device and the
+      app works fully without an account. If you choose to sign in, that data is also backed up to
+      our servers so it can sync across your devices. A few features (pronunciation scoring, AI help)
+      send specific content to our servers when you use them. We use crash and usage diagnostics to
+      improve the app, and we never sell your data.
     </p>
 
     <h2>1. Who we are</h2>
@@ -95,7 +99,7 @@
 
     <h2>2. Data we collect</h2>
 
-    <h3>2.1 Data you provide directly (stays on your device)</h3>
+    <h3>2.1 Data stored on your device</h3>
     <ul>
       <li>Words and phrases you save to flashcards, lessons, and folders.</li>
       <li>Search history (you can clear it from Settings at any time).</li>
@@ -103,49 +107,108 @@
       <li>Learning preferences: target language, translation language, theme, daily goal.</li>
     </ul>
     <p>
-      All of the above is stored locally in your device's app sandbox
+      This is stored locally in your device's app sandbox
       (SQLite database, SharedPreferences, audio cache).
-      It is not transmitted to us. Uninstalling the app removes it.
+      The app is fully usable without an account, in which case this data never leaves your device,
+      and uninstalling removes it. If you sign in, it is also synced as described in 2.3.
     </p>
 
-    <h3>2.2 Diagnostic data sent to us when the app misbehaves</h3>
-
-    <p><strong>Crash diagnostics — Google Firebase Crashlytics</strong></p>
+    <h3>2.2 Account data (only if you sign in)</h3>
+    <p>
+      Signing in is optional and only needed for cloud backup, syncing across devices, referrals,
+      and shared lists. We support <strong>Sign in with Apple</strong> and <strong>Google Sign-In</strong>.
+      When you sign in we receive and store, on our servers:
+    </p>
     <ul>
-      <li>Stack trace of the crash, OS version, device model, app version, anonymous installation ID.</li>
-      <li>Crashlytics does not collect personal identifiers
-        (no name, no email, no IP address, no content of your study sessions).</li>
+      <li>Your email address (with Apple you may choose a private relay address that hides your real one)
+        and display name, as provided by Apple or Google.</li>
+      <li>A stable provider identifier used to recognise your account on return.</li>
+      <li>An account record (a random internal id, sign-up date, last-seen date) and, if you take part,
+        a referral code and any active bonus period.</li>
+    </ul>
+    <p>
+      We do not receive your Apple or Google password. You can delete your account and all of the
+      above at any time (see section 6).
+    </p>
+
+    <h3>2.3 Cloud sync &amp; backup (only if you sign in)</h3>
+    <p>
+      When you are signed in, the learning data in 2.1 is backed up to our servers and synced to your
+      other signed-in devices. Your device stays the source of truth; we store your records so they
+      can be restored or merged. Cloud backup is a free account benefit and does not require a subscription.
+      The data is stored on our own servers located in the EU (Estonia); it is not in Firebase or any third party.
+    </p>
+
+    <h3>2.4 AI features (only when you use them)</h3>
+    <p>
+      Optional AI features send specific content to our server, which forwards it to third-party
+      large-language-model providers (<strong>Groq</strong> and <strong>Mistral AI</strong>) to generate a response:
+    </p>
+    <ul>
+      <li><strong>Explain a word in context</strong> — the word and the sentence it appears in.</li>
+      <li><strong>Generate a story</strong> — the list of words you ask to practise.</li>
+      <li><strong>Explain a grammar mistake</strong> — the exercise sentence involved.</li>
+    </ul>
+    <p>
+      We send only what is needed to produce the result, not your identity. We do not use this content
+      to train models; our server may cache a generated explanation so the same lookup is faster next time.
+    </p>
+
+    <h3>2.5 Pronunciation scoring (only when you use it)</h3>
+    <p>
+      When you use the speaking / pronunciation feature, the short audio clip you record is sent to our
+      pronunciation-assessment service to be scored against the reference text. The audio is processed
+      transiently to compute the score and is <strong>not stored</strong> after the response is returned.
+      (This is separate from dictation exercises, where speech is recognised on-device by the operating
+      system and is not sent to us — see section 8.)
+    </p>
+
+    <h3>2.6 Diagnostic data</h3>
+    <p><strong>Crash &amp; usage analytics — Google Firebase</strong></p>
+    <ul>
+      <li><strong>Crashlytics</strong>: stack trace of the crash, OS version, device model, app version,
+        and an anonymous installation ID. No name, email, IP address, or the content of your study sessions.</li>
+      <li><strong>Analytics &amp; Performance</strong>: anonymous, aggregated usage and performance events
+        (e.g. which screens are opened, app load times) so we can see which features need work. Not tied
+        to your account identity.</li>
       <li>Disabled in debug/test builds.</li>
     </ul>
-
     <p><strong>Server error diagnostics — Sentry</strong></p>
     <ul>
       <li>When our backend services (<code>api.spelvi.com</code>, <code>cdn.spelvi.com</code>)
-        encounter unhandled errors, an error report is sent to Sentry.</li>
-      <li>Reports include: error timestamp, stack trace, request URL path,
-        server hostname tag (e.g. <code>spelvi-api</code>, <code>gutendex</code>, <code>tatoeba-api</code>).</li>
-      <li>We have explicitly disabled collection of request bodies and user IP addresses
-        (<code>send_default_pii=False</code> in our Sentry SDK configuration).</li>
+        hit an unhandled error, an error report is sent to Sentry.</li>
+      <li>Reports include: error timestamp, stack trace, request URL path, and a server hostname tag.</li>
+      <li>We disable collection of request bodies and user IP addresses
+        (<code>send_default_pii=False</code> in our Sentry configuration).</li>
     </ul>
 
-    <h3>2.3 Network requests we route on your behalf</h3>
+    <h3>2.7 Network requests we route on your behalf</h3>
     <p>
-      Some features of Spelvi proxy upstream APIs through our infrastructure
-      so the app does not have to bundle third-party API keys.
-      We do not log the contents of these requests.
+      Some features proxy upstream APIs through our infrastructure so the app does not have to bundle
+      third-party API keys. We do not log the contents of these requests.
     </p>
     <ul>
       <li><strong>Pixabay image search</strong> — your search query is forwarded to Pixabay through our server.</li>
       <li><strong>Project Gutenberg / Gutendex</strong> — public-domain book catalog lookup.</li>
       <li><strong>Tatoeba</strong> — public sentence corpus for grammar exercises.</li>
       <li><strong>LibriVox / Internet Archive</strong> — public-domain audiobook delivery.</li>
+      <li><strong>News reader</strong> — public RSS/news articles fetched through our server.</li>
     </ul>
+
+    <h3>2.8 Purchases</h3>
+    <p>
+      If you buy a Spelvi Pro subscription, the purchase is processed by Apple or Google and managed
+      through <strong>Adapty</strong>, our subscription-infrastructure provider, which tells the app whether your
+      subscription is active. Payment card details are handled by Apple/Google and are never seen by us.
+      Shared word lists you create are public by design (see section 4).
+    </p>
 
     <h2>3. How we use the data</h2>
     <ul>
-      <li>To provide language-learning features (dictionary, lessons, books, audio, grammar).</li>
-      <li>To diagnose crashes and server errors so we can fix them.</li>
-      <li>To understand aggregate, anonymous patterns of use (which features need work).</li>
+      <li>To provide language-learning features (dictionary, lessons, books, audio, grammar, AI help, pronunciation).</li>
+      <li>To back up and sync your progress across your devices when you sign in.</li>
+      <li>To manage subscriptions, referrals, and shared lists.</li>
+      <li>To diagnose crashes and server errors, and to understand aggregate, anonymous usage so we can fix and improve things.</li>
     </ul>
     <p>
       We <strong>do not</strong>:
@@ -160,10 +223,40 @@
       </thead>
       <tbody>
         <tr>
-          <td>Google Firebase Crashlytics</td>
-          <td>Crash reporting</td>
-          <td>Stack traces, anonymous install ID, OS/device info</td>
+          <td>Apple — Sign in with Apple</td>
+          <td>Optional account sign-in</td>
+          <td>Email (or private relay), name, provider id</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Google — Sign-In</td>
+          <td>Optional account sign-in</td>
+          <td>Email, name, provider id</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Google Firebase (Crashlytics, Analytics, Performance)</td>
+          <td>Crash, usage &amp; performance diagnostics</td>
+          <td>Stack traces, anonymous install ID, OS/device info, aggregate usage events</td>
           <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Adapty</td>
+          <td>Subscription management</td>
+          <td>Purchase/subscription status, anonymous app user id</td>
+          <td><a href="https://adapty.io/privacy/" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Groq</td>
+          <td>AI word/grammar/story generation</td>
+          <td>The word/sentence/word-list you submit to an AI feature</td>
+          <td><a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">policy</a></td>
+        </tr>
+        <tr>
+          <td>Mistral AI</td>
+          <td>AI generation (fallback)</td>
+          <td>The word/sentence/word-list you submit to an AI feature</td>
+          <td><a href="https://mistral.ai/terms/" target="_blank" rel="noopener">terms</a></td>
         </tr>
         <tr>
           <td>Sentry</td>
@@ -199,30 +292,38 @@
     </table>
 
     <p>
-      Crash and error diagnostics may be transferred to servers in the United States,
-      where Google and Sentry primarily host their infrastructure.
-      By using Spelvi you consent to this international transfer, which is necessary
-      for the reliability of the service.
+      Some data may be transferred to and processed on servers in other countries, including the
+      United States, where providers such as Google, Sentry, Groq, Mistral, and Adapty host their
+      infrastructure. By using these features you consent to this international transfer, which is
+      necessary to provide the service.
     </p>
 
     <h2>5. Data retention</h2>
     <ul>
-      <li><strong>Local app data</strong> (lessons, progress, history): stored on your device only,
+      <li><strong>Local app data</strong> (lessons, progress, history): stored on your device,
         removed when you uninstall.</li>
-      <li><strong>Crashlytics reports</strong>: retained per Google's policy, typically 90 days.</li>
+      <li><strong>Account &amp; synced data</strong>: kept on our servers while your account exists,
+        and deleted when you delete your account (see section 6).</li>
+      <li><strong>Pronunciation audio</strong>: not retained — processed only to compute the score.</li>
+      <li><strong>AI content</strong>: a generated explanation may be cached on our server; the
+        submitted text is processed transiently to produce it.</li>
+      <li><strong>Crashlytics / Analytics</strong>: retained per Google's policy (Crashlytics typically 90 days).</li>
       <li><strong>Sentry events</strong>: 30 days on the free tier we use.</li>
     </ul>
 
-    <h2>6. Your rights (GDPR, UK GDPR, CCPA)</h2>
+    <h2>6. Your rights &amp; account deletion (GDPR, UK GDPR, CCPA)</h2>
     <p>
-      If you are in the European Union, EEA, United Kingdom, or California,
-      you have the right to access the diagnostic data we hold,
-      request its deletion, or object to its processing.
-      Note that diagnostic events are not linked to a personal identifier
-      and we typically cannot tie them back to a specific individual.
+      You can <strong>delete your account directly in the app</strong> (Settings → Delete account).
+      This permanently removes your account record, sign-in identity, and all synced data from our servers.
+      You can also request deletion by emailing <a href="mailto:privacy@spelvi.com">privacy@spelvi.com</a>
+      from your account email; a web deletion request page is available at
+      <a href="https://spelvi.com/support.html">spelvi.com/support.html</a>.
     </p>
     <p>
-      To exercise these rights or ask questions, email
+      If you are in the European Union, EEA, United Kingdom, or California, you also have the right to
+      access the data we hold about you, request its correction or deletion, or object to its processing.
+      Anonymous diagnostic events are not linked to a personal identifier and typically cannot be tied
+      back to a specific individual. To exercise these rights, email
       <a href="mailto:privacy@spelvi.com">privacy@spelvi.com</a>.
     </p>
 
@@ -236,11 +337,12 @@
 
     <h2>8. Permissions used by the app</h2>
     <ul>
-      <li><strong>Microphone</strong> — only when you use Speech-to-Text in dictation exercises.
-        Audio is processed by the operating system's on-device speech recognizer and is not transmitted to us.</li>
+      <li><strong>Microphone</strong> — used for two features. In dictation exercises, audio is recognised
+        by the operating system's on-device speech recognizer and is not sent to us. In the pronunciation /
+        speaking feature, the short clip is sent to our server to be scored and is not stored (see section 2.5).</li>
       <li><strong>Storage</strong> — to download books, audiobooks, dictionaries, and the word-image archive.
         Files live in the app's sandbox.</li>
-      <li><strong>Network</strong> — required to fetch books, audio, images, and grammar exercises.</li>
+      <li><strong>Network</strong> — required to fetch books, audio, images, news, grammar exercises, and to sync.</li>
     </ul>
 
     <h2>9. Changes to this policy</h2>
