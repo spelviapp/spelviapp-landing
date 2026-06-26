@@ -1,0 +1,20 @@
+{
+  "_comment": "Public status + changelog feed for the Status page (changelog.html fetches this same-origin — no token, no CORS). Update 'services[].status' to one of: operational | degraded | down. Add a new object to the top of 'changelog' on each release. The app's version-gate manifest is separate and lives token-gated at cdn.spelvi.com/app/version.json (source: project_d/scripts/cdn/app/version.json).",
+  "updated": "2026-06-26",
+  "overall": "operational",
+  "services": [
+    { "name": "App API", "status": "operational" },
+    { "name": "Content CDN", "status": "operational" },
+    { "name": "Sync & accounts", "status": "operational" }
+  ],
+  "latest": "1.0.0",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-06-26",
+      "notes": [
+        "Initial release — smart dictionary, CEFR grammar, AI help, pronunciation scoring, books, audiobooks and a news reader."
+      ]
+    }
+  ]
+}

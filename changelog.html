@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status &amp; updates — spelvi</title>
+<meta name="description" content="Spelvi service status and release notes — what's operational and what's new in each version.">
+<meta name="theme-color" content="#B8C5F2">
+<link rel="canonical" href="https://spelvi.com/changelog.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="Status &amp; updates — spelvi">
+<meta property="og:description" content="Spelvi service status and release notes.">
+<meta property="og:url" content="https://spelvi.com/changelog.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://spelvi.com/icon-1024.png">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .status-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-xl); box-shadow: var(--shadow-1);
+    padding: 26px 28px; margin-top: 8px;
+  }
+  .status-head {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-display); font-weight: 500; font-size: 24px;
+    letter-spacing: -0.01em; margin: 0 0 6px;
+  }
+  .status-sub { color: var(--fg-3); font-size: 14px; margin: 0 0 20px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 18%, transparent); }
+  .ok    { color: var(--mint-strong); }
+  .degraded { color: var(--accent-strong); }
+  .down  { color: var(--blush-strong, #E89AA6); }
+  .dot.ok { background: var(--mint-strong); }
+  .dot.degraded { background: var(--accent-strong); }
+  .dot.down { background: var(--blush-strong, #E89AA6); }
+  .svc-list { display: flex; flex-direction: column; }
+  .svc-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 13px 0; border-top: 1px solid var(--border);
+  }
+  .svc-row span:first-child { color: var(--fg-1); font-size: 15px; }
+  .svc-pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 13px; font-weight: 600;
+  }
+  .svc-pill .dot { width: 8px; height: 8px; box-shadow: none; }
+
+  .releases { margin-top: 10px; }
+  .release {
+    border-left: 2px solid var(--border-strong); padding: 2px 0 26px 24px;
+    position: relative;
+  }
+  .release::before {
+    content: ""; position: absolute; left: -7px; top: 4px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--primary); box-shadow: 0 0 0 4px var(--bg);
+  }
+  .release:last-child { padding-bottom: 0; }
+  .rel-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .rel-ver {
+    font-family: var(--font-display); font-weight: 500; font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .rel-date { font-family: var(--font-mono); font-size: 13px; color: var(--fg-3); }
+  .rel-notes { margin: 12px 0 0; padding-left: 20px; }
+  .rel-notes li { color: var(--fg-2); font-size: 15.5px; line-height: 1.6; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="mono-s"><i>s</i></span><span class="wordmark-h">spelvi<b>.</b></span></a>
+    <span class="nav-spacer"></span>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg id="themeIco" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button>
+    <a href="index.html#get" class="btn">Get the app</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="narrow">
+    <span class="eyebrow reveal in">Status</span>
+    <h1 class="page-title reveal in">Status &amp; <span class="mark mint"><span>updates</span></span></h1>
+    <p class="page-lead reveal in d1">Live service status and the release notes for every version of spelvi.</p>
+    <div class="meta-row reveal in d1" id="updatedRow"></div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:20px;">
+  <div class="narrow">
+    <div class="sec-label reveal">Service status</div>
+    <div class="status-card reveal" id="statusCard">
+      <div class="status-head"><span class="dot ok" id="overallDot"></span> <span id="overallText">All systems operational</span></div>
+      <p class="status-sub" id="statusSub">Checking…</p>
+      <div class="svc-list" id="svcList"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="narrow">
+    <div class="sec-label reveal">Release notes</div>
+    <h2 class="sec-title reveal" style="margin-bottom:28px;">What's new.</h2>
+    <div class="releases reveal" id="releases">
+      <p class="status-sub">Loading release notes…</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-l"><span class="mono-s" style="width:26px;height:26px;border-radius:8px;"><i style="font-size:17px;">s</i></span>© 2026 spelvi · hello@spelvi.com</div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  // Status page — pulls the same-origin status.json (no token, no CORS) and
+  // renders the service grid + changelog. Falls back to a sane static state.
+  (function () {
+    var LABELS = { operational: 'Operational', degraded: 'Degraded', down: 'Down' };
+    var esc = function (s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    };
+    function fmtDate(iso) {
+      var d = new Date(iso + 'T00:00:00');
+      if (isNaN(d)) return iso || '';
+      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+    function render(data) {
+      var overall = (data.overall || 'operational');
+      var dot = document.getElementById('overallDot');
+      var txt = document.getElementById('overallText');
+      dot.className = 'dot ' + overall;
+      txt.textContent = overall === 'operational' ? 'All systems operational'
+        : overall === 'degraded' ? 'Partial service disruption'
+        : 'Service disruption';
+      var sub = document.getElementById('statusSub');
+      sub.textContent = data.latest ? ('Latest version ' + data.latest) : '';
+      if (data.updated) {
+        document.getElementById('updatedRow').innerHTML =
+          '<b>Last updated:</b> ' + esc(fmtDate(data.updated));
+      }
+      var list = document.getElementById('svcList');
+      list.innerHTML = (data.services || []).map(function (s) {
+        var st = s.status || 'operational';
+        return '<div class="svc-row"><span>' + esc(s.name) + '</span>' +
+          '<span class="svc-pill ' + st + '"><span class="dot ' + st + '"></span>' +
+          esc(LABELS[st] || st) + '</span></div>';
+      }).join('');
+      var rel = document.getElementById('releases');
+      var items = data.changelog || [];
+      rel.innerHTML = items.length ? items.map(function (r) {
+        var notes = (r.notes || []).map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('');
+        return '<div class="release"><div class="rel-head">' +
+          '<span class="rel-ver">' + esc(r.version) + '</span>' +
+          '<span class="rel-date">' + esc(fmtDate(r.date)) + '</span></div>' +
+          '<ul class="rel-notes">' + notes + '</ul></div>';
+      }).join('') : '<p class="status-sub">No release notes yet.</p>';
+    }
+    fetch('status.json', { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
+      .then(render)
+      .catch(function () {
+        document.getElementById('statusSub').textContent =
+          'Status feed unavailable right now.';
+        document.getElementById('releases').innerHTML =
+          '<p class="status-sub">Release notes are temporarily unavailable.</p>';
+      });
+  })();
+</script>
+</body>
+</html>
