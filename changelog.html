@@ -178,7 +178,9 @@
           '<ul class="rel-notes">' + notes + '</ul></div>';
       }).join('') : '<p class="status-sub">No release notes yet.</p>';
     }
-    fetch('status.json', { cache: 'no-cache' })
+    // Live status feed, rewritten every few minutes by the VPS cron
+    // (cdn.spelvi.com/status.json — public, CORS, no-cache).
+    fetch('https://cdn.spelvi.com/status.json', { cache: 'no-cache' })
       .then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
       .then(render)
       .catch(function () {
