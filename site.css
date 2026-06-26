@@ -36,18 +36,14 @@ nav.scrolled { border-bottom-color: var(--border); }
 .nav-in { display: flex; align-items: center; gap: 20px; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; }
 .mono-s {
-  width: 30px; height: 30px; border-radius: 9px; background: var(--butter-soft);
-  display: grid; place-items: center; position: relative; overflow: hidden;
+  width: 30px; height: 30px; border-radius: 9px;
+  background: var(--surface) url('icon-1024.png') center/cover no-repeat;
+  position: relative; overflow: hidden;
   box-shadow: inset 0 0 0 1px var(--border-strong); flex: none;
 }
-.mono-s::before {
-  content: ""; position: absolute; left: 3px; right: 3px; top: 52%; height: 9px;
-  background: var(--butter-strong); transform: rotate(-7deg); border-radius: 2px;
-}
-.mono-s i {
-  position: relative; z-index: 1; font-family: var(--font-display); font-style: italic;
-  font-weight: 600; font-size: 20px; color: var(--primary-ink); line-height: 1; transform: translateY(-1px);
-}
+/* Real app icon now lives in the background image; hide the CSS-drawn glyph. */
+.mono-s::before { display: none; }
+.mono-s i { display: none; }
 .wordmark-h {
   font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -0.02em;
   font-variation-settings: "opsz" 144, "SOFT" 100;
