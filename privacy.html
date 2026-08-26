@@ -37,7 +37,7 @@
     <span class="eyebrow reveal in">Legal</span>
     <h1 class="page-title reveal in">Privacy <span class="mark lav"><span>Policy</span></span></h1>
     <p class="page-lead reveal in d1">Plain-language summary first, full detail below. The short version: we collect as little as possible, we never sell your data, and your saved words are yours to delete anytime.</p>
-    <div class="meta-row reveal in d1"><b>Last updated:</b> 26 June 2026 · <b>Effective:</b> at launch</div>
+    <div class="meta-row reveal in d1"><b>Last updated:</b> 26 August 2026 · <b>Effective:</b> at launch</div>
   </div>
 </header>
 
@@ -61,17 +61,18 @@
     </aside>
 
     <div class="prose reveal">
-      <div class="callout" style="margin-bottom:36px;"><strong>The short version.</strong> spelvi works for you, not advertisers. We don't sell personal data, we don't run third-party ad trackers, and pronunciation audio is processed for scoring and discarded unless you save it. Everything you create — saved words, progress — can be deleted from Settings.</div>
+      <div class="callout" style="margin-bottom:36px;"><strong>The short version.</strong> spelvi works for you, not advertisers. We don't sell personal data, we don't run third-party ad trackers, and pronunciation audio is processed for scoring and then discarded. Everything you create — saved words, progress — can be deleted from Settings.</div>
 
       <h2 id="summary">1. Summary</h2>
       <p>This policy explains what information spelvi (“we”, “us”) collects when you use our apps and website, why we collect it, and the choices you have. It applies to the spelvi iOS and Android apps and spelvi.com.</p>
 
       <h2 id="collect">2. What we collect</h2>
       <ul>
-        <li><strong>Account information</strong> — your email address and authentication details, so your progress can sync across devices.</li>
+        <li><strong>Account information</strong> — your email address, your display name if your sign-in provider supplies one, and authentication details, so your progress can sync across devices.</li>
         <li><strong>Learning data</strong> — saved words, lesson and grammar history, streaks, daily goals and progress charts.</li>
+        <li><strong>Things you save while reading</strong> — book highlights and your own notes, and news articles you bookmark. Bookmarked articles are stored with their text and link so they stay readable on your other devices.</li>
         <li><strong>Usage &amp; diagnostics</strong> — anonymised app events and crash reports that help us fix bugs and improve features.</li>
-        <li><strong>Device information</strong> — operating system, app version and a device identifier used for sync and security.</li>
+        <li><strong>Device information</strong> — operating system, app version, and two pseudonymous identifiers created on your device: one that groups your crash reports and usage events, and one that counts your use of the features we meter. Neither is derived from your hardware, and neither identifies you personally.</li>
         <li><strong>Website analytics</strong> — our marketing site uses privacy-friendly, cookieless analytics (GoatCounter) that counts page visits and referrers in aggregate, with no cookies, no personal profiles, and no cross-site tracking.</li>
       </ul>
       <p>We do not collect contacts, precise location, or advertising identifiers.</p>
@@ -80,13 +81,15 @@
       <p>We use the information above only to operate and improve spelvi: to sync your progress, personalise lesson pacing against the CEFR scale, score pronunciation, provide support, and keep the service secure. We do not build advertising profiles and we do not sell or rent your personal data to anyone.</p>
 
       <h2 id="audio">4. Voice &amp; pronunciation</h2>
-      <p>When you use pronunciation scoring, your microphone audio is processed to generate a score and feedback. <strong>This audio is not stored</strong> on our servers unless you explicitly save a recording for your own review. Saved recordings live in your account and can be deleted at any time.</p>
+      <p>The microphone is used in three places: dictating a search, pronunciation scoring, and spoken practice conversations. For scoring and conversations, your recording is uploaded, turned into a score, feedback or a transcript, and <strong>not stored</strong> on our servers. The app deletes its copy of the recording from your device as soon as it has been sent.</p>
+      <p>Dictating a search works differently: it uses your device's built-in speech recognition, which on iOS may send the audio to Apple to be transcribed. That processing is governed by Apple's privacy policy, not ours.</p>
 
       <h2 id="ai">5. AI features</h2>
-      <p>spelvi's AI helpers (in-context explanations, story generation, mistake breakdowns) send the relevant text — for example the sentence you tapped — to a processing provider to generate a response. We minimise what is sent, do not include your identity in those requests, and do not use your private content to train third-party models.</p>
+      <p>spelvi's AI helpers (in-context explanations, story generation, mistake breakdowns) send the relevant text — for example the sentence you tapped, or the list of words you asked for a story about — through our servers to an inference provider, currently <strong>Groq</strong> or <strong>Mistral AI</strong>, to generate a response. We minimise what is sent, never include your name or email in those requests, and do not use your private content to train third-party models.</p>
 
       <h2 id="share">6. Sharing &amp; processors</h2>
       <p>We share data only with service providers who help us run spelvi, and only the minimum each needs: <strong>Apple</strong> and <strong>Google</strong> (sign-in, and billing for purchases), <strong>Adapty</strong> (subscription management), <strong>Google Firebase</strong> (crash and usage diagnostics), <strong>Sentry</strong> (server error monitoring), and <strong>Groq</strong> and <strong>Mistral AI</strong> (AI inference for the helper features). These processors are bound to protect your data and use it solely to provide their service to us. We may disclose information if required by law.</p>
+      <p><strong>When you share a word list.</strong> Sharing a list is the one case where you publish something yourself. The list — its title, its words and the example sentences attached to them — is copied to a public web page that anyone with the link can open, without signing in. Your name and email are never attached to it. Share only lists you are happy to make public.</p>
 
       <h2 id="storage">7. Storage &amp; sync</h2>
       <p>Your data is encrypted in transit. Free cloud backup keeps your saved words and progress available across devices signed in to your account; this account data is stored on our own servers located in the EU (Estonia), not in a third-party cloud. Subscriptions are handled by the App Store or Google Play; we never see your full card details.</p>
