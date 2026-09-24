@@ -4,8 +4,24 @@
    Import as:  <link rel="stylesheet" href="colors_and_type.css">
    ============================================================ */
 
-/* -------- Web fonts (Google Fonts CDN — fonts/ folder reserved for self-host) -------- */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Inter:wght@400;500;600;700;800&display=swap');
+/* -------- Web fonts (self-hosted, fonts/ — OFL, see fonts/OFL.txt) --------
+   Served from our own origin on purpose: loading them from Google Fonts hands
+   every visitor's IP to Google without consent, which German courts have
+   fined (LG München I, 3 O 17493/20). Variable woff2, subset to Latin + IPA. */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('fonts/Fraunces-var.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-var.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* -------- Light theme (default) -------- */
 :root {

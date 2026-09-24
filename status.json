@@ -7,14 +7,6 @@
     { "name": "Content CDN", "status": "operational" },
     { "name": "Sync & accounts", "status": "operational" }
   ],
-  "latest": "1.0.0",
-  "changelog": [
-    {
-      "version": "1.0.0",
-      "date": "2026-06-26",
-      "notes": [
-        "Initial release — smart dictionary, CEFR grammar, AI help, pronunciation scoring, books, audiobooks and a news reader."
-      ]
-    }
-  ]
+  "latest": "",
+  "changelog": []
 }

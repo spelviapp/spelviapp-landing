@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — spelvi</title>
-<meta name="description" content="How Spelvi handles your data: what we collect, third-party processors, voice and AI features, storage, and your rights.">
+<meta name="description" content="How Spelvi handles your data: who is responsible, what we collect and why, AI and voice features, the services involved, where data is stored, how long it is kept, and your rights.">
 <meta name="theme-color" content="#B8C5F2">
 <link rel="canonical" href="https://spelvi.com/privacy.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -36,8 +36,8 @@
   <div class="wrap">
     <span class="eyebrow reveal in">Legal</span>
     <h1 class="page-title reveal in">Privacy <span class="mark lav"><span>Policy</span></span></h1>
-    <p class="page-lead reveal in d1">Plain-language summary first, full detail below. The short version: we collect as little as possible, we never sell your data, and your saved words are yours to delete anytime.</p>
-    <div class="meta-row reveal in d1"><b>Last updated:</b> 26 August 2026 · <b>Effective:</b> at launch</div>
+    <p class="page-lead reveal in d1">Plain-language summary first, full detail below. The short version: we collect as little as we can, we never sell your data, and you can switch off diagnostics or delete your account at any time.</p>
+    <div class="meta-row reveal in d1"><b>Last updated:</b> 24 September 2026</div>
   </div>
 </header>
 
@@ -46,69 +46,125 @@
     <aside class="toc">
       <div class="lbl">On this page</div>
       <ol>
-        <li><a href="#summary">Summary</a></li>
+        <li><a href="#who">Who we are</a></li>
         <li><a href="#collect">What we collect</a></li>
-        <li><a href="#use">How we use it</a></li>
+        <li><a href="#use">Why, and on what basis</a></li>
         <li><a href="#audio">Voice &amp; pronunciation</a></li>
         <li><a href="#ai">AI features</a></li>
-        <li><a href="#share">Sharing &amp; processors</a></li>
-        <li><a href="#storage">Storage &amp; sync</a></li>
+        <li><a href="#direct">Services the app contacts</a></li>
+        <li><a href="#share">Processors &amp; sharing</a></li>
+        <li><a href="#storage">Where data is stored</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
         <li><a href="#rights">Your rights</a></li>
         <li><a href="#children">Children</a></li>
+        <li><a href="#security">Security</a></li>
         <li><a href="#changes">Changes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ol>
     </aside>
 
     <div class="prose reveal">
-      <div class="callout" style="margin-bottom:36px;"><strong>The short version.</strong> spelvi works for you, not advertisers. We don't sell personal data, we don't run third-party ad trackers, and pronunciation audio is processed for scoring and then discarded. Everything you create — saved words, progress — can be deleted from Settings.</div>
+      <div class="callout" style="margin-bottom:36px;"><strong>The short version.</strong> spelvi works for you, not advertisers: no ads, no ad trackers, no advertising identifiers, and we never sell personal data. You can use the app without an account — then your words stay on your device. Recordings are scored and thrown away. Diagnostics can be switched off in Settings, and your account can be deleted in the app or <a class="link" href="delete-account.html">by email</a>.</div>
 
-      <h2 id="summary">1. Summary</h2>
-      <p>This policy explains what information spelvi (“we”, “us”) collects when you use our apps and website, why we collect it, and the choices you have. It applies to the spelvi iOS and Android apps and spelvi.com.</p>
+      <h2 id="who">1. Who we are</h2>
+      <p>spelvi is developed and operated by <strong>Maxim Bekmetov</strong>, an independent developer (“we”, “us”). He is the controller of the personal data described here. You can reach him at <a class="link" href="mailto:hello@spelvi.com">hello@spelvi.com</a>. This policy covers the spelvi apps for iOS and Android and the website spelvi.com.</p>
 
       <h2 id="collect">2. What we collect</h2>
       <ul>
-        <li><strong>Account information</strong> — your email address, your display name if your sign-in provider supplies one, and authentication details, so your progress can sync across devices.</li>
-        <li><strong>Learning data</strong> — saved words, lesson and grammar history, streaks, daily goals and progress charts.</li>
-        <li><strong>Things you save while reading</strong> — book highlights and your own notes, and news articles you bookmark. Bookmarked articles are stored with their text and link so they stay readable on your other devices.</li>
-        <li><strong>Usage &amp; diagnostics</strong> — anonymised app events and crash reports that help us fix bugs and improve features.</li>
-        <li><strong>Device information</strong> — operating system, app version, and two pseudonymous identifiers created on your device: one that groups your crash reports and usage events, and one that counts your use of the features we meter. Neither is derived from your hardware, and neither identifies you personally.</li>
-        <li><strong>Website analytics</strong> — our marketing site uses privacy-friendly, cookieless analytics (GoatCounter) that counts page visits and referrers in aggregate, with no cookies, no personal profiles, and no cross-site tracking.</li>
+        <li><strong>If you don't sign in</strong> — nothing that names you. Your saved words, lessons and progress stay on your device. The app creates a random install identifier so our servers can apply the free plan's daily limits; it isn't derived from your hardware and isn't linked to your identity.</li>
+        <li><strong>Account (optional)</strong> — if you sign in with Apple or Google: your email address, your display name if the provider shares it, and the provider's account id, so your progress can sync across devices.</li>
+        <li><strong>Synced learning data</strong> — for signed-in users: saved words and word lists, lesson and grammar progress, streaks and goals, your library, book highlights and notes, and news articles you bookmark (their title, link, source, date and a short excerpt — never the article text).</li>
+        <li><strong>What you ask the app to work on</strong> — the words you look up, the sentence around a word you tap, text you ask the AI helpers about, and your voice when you use speaking features. See sections <a class="link" href="#audio">4</a>–<a class="link" href="#direct">6</a> for where that goes.</li>
+        <li><strong>Usage &amp; diagnostics</strong> — app events (for example which screens are opened, or that an exercise was completed and its score), crash reports and performance measurements, collected with Google Firebase (Analytics, Crashlytics and Performance Monitoring). They carry a random per-install id plus a few settings (your study and translation languages, whether you have Pro, app version, theme), and the SDKs add device model, operating system and locale. This data is <em>pseudonymous</em> — it doesn't include your name or email, but it isn't anonymous either. You can switch it off at any time in <strong>Settings → About → Share usage &amp; crash data</strong>.</li>
+        <li><strong>Purchases</strong> — Apple or Google process the payment; we receive the subscription status, and our subscription provider Adapty links it to your install and, if you're signed in, to your account id. We never see your card details.</li>
+        <li><strong>Security records</strong> — our servers see your IP address with every request. We don't keep general access logs. We do keep a short security log of sign-in events (signing in, refreshing a session, registering or renewing an install identifier, deleting an account) with the IP address and a one-way hash of the account or install id, and daily usage counters that may be keyed by IP address to stop abuse.</li>
+        <li id="waitlist"><strong>Launch waitlist</strong> — if you join the waitlist on spelvi.com, we store your email address and when you signed up, and use it only to tell you when spelvi launches.</li>
+        <li><strong>Website</strong> — spelvi.com counts visits with GoatCounter, which uses no cookies and builds no profiles. Fonts are served from our own site. Your light/dark theme choice is kept in your browser's local storage and never sent to us.</li>
       </ul>
-      <p>We do not collect contacts, precise location, or advertising identifiers.</p>
+      <p>We do not collect contacts, precise location, photos or advertising identifiers, and there are no ads or advertising trackers in spelvi.</p>
 
-      <h2 id="use">3. How we use it</h2>
-      <p>We use the information above only to operate and improve spelvi: to sync your progress, personalise lesson pacing against the CEFR scale, score pronunciation, provide support, and keep the service secure. We do not build advertising profiles and we do not sell or rent your personal data to anyone.</p>
+      <h2 id="use">3. Why we use it, and on what basis</h2>
+      <ul>
+        <li><strong>To provide spelvi</strong> — dictionary lookups, lessons, AI helpers, pronunciation scoring, sync and your account. Basis: performing our contract with you (GDPR Art. 6(1)(b)).</li>
+        <li><strong>To keep the service secure and fair</strong> — free-plan limits, rate limits, fraud and abuse prevention. Basis: our legitimate interest in running a secure service (Art. 6(1)(f)).</li>
+        <li><strong>To fix bugs and improve spelvi</strong> — diagnostics and usage events. Basis: our legitimate interest in a working app; you can object at any time with the switch in Settings.</li>
+        <li><strong>To send the launch email</strong> — waitlist only. Basis: your consent (Art. 6(1)(a)), which you can withdraw at any time by replying to the email or writing to us.</li>
+        <li><strong>To meet legal obligations</strong> — for example responding to lawful requests (Art. 6(1)(c)).</li>
+      </ul>
+      <p>We don't build advertising profiles, we don't sell or rent personal data, and we don't make automated decisions about you that have legal or similarly significant effects.</p>
 
       <h2 id="audio">4. Voice &amp; pronunciation</h2>
-      <p>The microphone is used in three places: dictating a search, pronunciation scoring, and spoken practice conversations. For scoring and conversations, your recording is uploaded, turned into a score, feedback or a transcript, and <strong>not stored</strong> on our servers. The app deletes its copy of the recording from your device as soon as it has been sent.</p>
-      <p>Dictating a search works differently: it uses your device's built-in speech recognition, which on iOS may send the audio to Apple to be transcribed. That processing is governed by Apple's privacy policy, not ours.</p>
+      <p>The microphone is used in three places: dictating a search, pronunciation scoring, and spoken practice conversations. For scoring and conversations, your recording is uploaded to servers we run ourselves, turned into a score, feedback or a transcript, and <strong>not stored</strong>. The app deletes its copy from your device as soon as it has been sent. In a conversation, the <em>transcript</em> of what you said (not the audio) is then sent to an AI provider to write the reply — see section 5.</p>
+      <p>Dictating a search uses your device's built-in speech recognition, which may send the audio to Apple or Google to be transcribed. That processing is governed by their privacy policies, not ours.</p>
 
       <h2 id="ai">5. AI features</h2>
-      <p>spelvi's AI helpers (in-context explanations, story generation, mistake breakdowns) send the relevant text — for example the sentence you tapped, or the list of words you asked for a story about — through our servers to an inference provider, currently <strong>Groq</strong> or <strong>Mistral AI</strong>, to generate a response. We minimise what is sent, never include your name or email in those requests, and do not use your private content to train third-party models.</p>
+      <p>Translations of example sentences, definitions and words the dictionary doesn't cover are made the same way: the text goes to our servers, which answer from our dictionaries or a cache when they can and otherwise from the language models below.</p>
+      <p>The AI helpers — explanations, a word's meaning in the sentence you found it in, stories from your saved words, grammar feedback, and practice conversations — send the relevant text through our servers to a language model. The model runs either on a server we operate ourselves or at one of these providers: <strong>Groq</strong>, <strong>Google</strong> (Gemini API) or <strong>Cloudflare</strong> (Workers AI). What is sent is the text itself — for example the sentence you tapped and the word in it, or the list of words for a story — never your name, email or account id.</p>
+      <p>We don't use your content to train models. Some providers' terms allow them to use API inputs to improve their own services (Google's free Gemini API tier does), which is one more reason we send only the text. To save time and cost, answers are cached keyed by the text they were produced for, not by who asked.</p>
 
-      <h2 id="share">6. Sharing &amp; processors</h2>
-      <p>We share data only with service providers who help us run spelvi, and only the minimum each needs: <strong>Apple</strong> and <strong>Google</strong> (sign-in, and billing for purchases), <strong>Adapty</strong> (subscription management), <strong>Google Firebase</strong> (crash and usage diagnostics), <strong>Sentry</strong> (server error monitoring), and <strong>Groq</strong> and <strong>Mistral AI</strong> (AI inference for the helper features). These processors are bound to protect your data and use it solely to provide their service to us. We may disclose information if required by law.</p>
-      <p><strong>When you share a word list.</strong> Sharing a list is the one case where you publish something yourself. The list — its title, its words and the example sentences attached to them — is copied to a public web page that anyone with the link can open, without signing in. Your name and email are never attached to it. Share only lists you are happy to make public.</p>
-
-      <h2 id="storage">7. Storage &amp; sync</h2>
-      <p>Your data is encrypted in transit. Free cloud backup keeps your saved words and progress available across devices signed in to your account; this account data is stored on our own servers located in the EU (Estonia), not in a third-party cloud. Subscriptions are handled by the App Store or Google Play; we never see your full card details.</p>
-
-      <h2 id="rights">8. Your rights</h2>
+      <h2 id="direct">6. Services the app contacts directly</h2>
+      <p>To fetch dictionary data and books, the app talks to some public services directly rather than through our servers. Each of them receives your IP address and the request itself, and handles it under its own privacy policy:</p>
       <ul>
-        <li><strong>Correct</strong> account details at any time.</li>
-        <li><strong>Delete</strong> your account directly in the app (Settings → Delete account), which permanently removes your account and synced data from our servers.</li>
-        <li><strong>Object or restrict</strong> certain processing where local law (such as GDPR or CCPA) provides those rights.</li>
+        <li><strong>Datamuse</strong> — an English search that found nothing, to suggest spellings;</li>
+        <li><strong>Wiktionary</strong>, <strong>Free Dictionary API</strong> and <strong>Tatoeba</strong> — the word being looked up;</li>
+        <li><strong>Google Books</strong> — the title of a book whose description is shown;</li>
+        <li>book and audiobook catalogues — <strong>Open Library</strong>, <strong>Internet Archive</strong>, <strong>LibriVox</strong>, <strong>Project Gutenberg</strong>, <strong>Bloom Library</strong>, <strong>Global Digital Library</strong>, <strong>Standard Ebooks</strong> and <strong>Aozora Bunko</strong> — when you browse, open or download a book;</li>
+        <li><strong>ZenQuotes</strong> — to fetch the quote of the day.</li>
+      </ul>
+      <p>News feeds and articles are fetched through our own proxy, so news publishers don't see your IP address.</p>
+
+      <h2 id="share">7. Processors &amp; sharing</h2>
+      <p>We share personal data only with service providers who help us run spelvi, only as much as each needs, and under agreements that restrict them to providing their service to us:</p>
+      <ul>
+        <li><strong>Apple</strong> and <strong>Google</strong> — sign-in, app distribution and billing;</li>
+        <li><strong>Google Firebase</strong> — usage analytics, crash reports and performance monitoring;</li>
+        <li><strong>Adapty</strong> — subscription management;</li>
+        <li><strong>Cloudflare</strong> — content delivery and network protection; it also relays requests to AI providers;</li>
+        <li><strong>Groq</strong>, <strong>Google</strong> (Gemini API) and <strong>Cloudflare</strong> (Workers AI) — AI features, as described in section 5;</li>
+        <li><strong>Sentry</strong> — server error monitoring;</li>
+        <li>our <strong>hosting provider</strong> in Estonia, which runs the server that holds accounts.</li>
+      </ul>
+      <p>We may disclose information if the law requires it, and would pass it to a successor if spelvi were ever transferred — under this same policy.</p>
+      <p><strong>When you share a word list.</strong> Sharing a list is the one case where you publish something yourself. The list — its title, its words and the example sentences attached to them — is copied to a public web page that anyone with the link can open. Your name and email are never attached to it, and it isn't linked to your account, so deleting your account doesn't remove it: email us the link and we'll take it down.</p>
+
+      <h2 id="storage">8. Where your data is stored</h2>
+      <p>Accounts and synced data live on a server in the <strong>EU (Estonia)</strong>. Backups of that database, and the processing of recordings, speech and part of the AI requests, run on servers we own and operate ourselves, some of them <strong>outside the EU</strong>; no third party has access to them. Several providers in section 7 — Google, Cloudflare, Groq, Adapty and Sentry — process data in the <strong>United States</strong> and other countries. Where personal data from the EU goes to a provider outside it, we rely on the European Commission's Standard Contractual Clauses or, where the provider is certified, the EU-U.S. Data Privacy Framework. Everything travels encrypted (HTTPS).</p>
+
+      <h2 id="retention">9. How long we keep it</h2>
+      <ul>
+        <li><strong>Account and synced data</strong> — until you delete your account; then removed at once.</li>
+        <li><strong>Database backups</strong> — up to 90 days, on a rolling basis.</li>
+        <li><strong>Security log</strong> — 30 days.</li>
+        <li><strong>Usage counters</strong> — 7 days.</li>
+        <li><strong>Recordings</strong> — not kept; discarded as soon as they are scored or transcribed.</li>
+        <li><strong>Diagnostics</strong> — Firebase keeps user- and event-level analytics for at most 14 months (aggregated reports without identifiers may be kept longer) and crash reports for 90 days.</li>
+        <li><strong>Waitlist emails</strong> — until you unsubscribe, and no longer than 12 months after launch.</li>
+        <li><strong>Shared word lists</strong> — until you ask us to remove them.</li>
       </ul>
 
-      <h2 id="children">9. Children</h2>
-      <p>spelvi is intended for users aged 13 and over. We do not knowingly collect personal information from children under 13. If you believe a child has provided us data, contact us and we will remove it.</p>
+      <h2 id="rights">10. Your rights</h2>
+      <p>Depending on where you live (for example under the GDPR in the EU and UK, or US state laws such as the CCPA), you have the right to:</p>
+      <ul>
+        <li><strong>access</strong> your data and get a <strong>copy</strong> of it in a portable format — email us and we'll send your synced data as a file;</li>
+        <li><strong>correct</strong> it;</li>
+        <li><strong>delete</strong> it — in the app (Settings → Delete account) or, without the app, <a class="link" href="delete-account.html">by email</a>;</li>
+        <li><strong>restrict</strong> or <strong>object</strong> to processing — for diagnostics, simply switch them off in Settings;</li>
+        <li><strong>withdraw consent</strong> at any time, without affecting what happened before;</li>
+        <li><strong>complain</strong> to the data protection authority where you live or work.</li>
+      </ul>
+      <p>To use any of these, write to <a class="link" href="mailto:hello@spelvi.com">hello@spelvi.com</a> from the address linked to your account. We answer within one month, free of charge.</p>
 
-      <h2 id="changes">10. Changes</h2>
-      <p>If we make material changes to this policy, we'll update the date above and, for significant changes, notify you in the app or by email. Continued use after an update means you accept the revised policy.</p>
+      <h2 id="children">11. Children</h2>
+      <p>spelvi is intended for people aged 13 and over, or older where the law of your country sets a higher age for consenting to online services on your own. We don't knowingly collect personal data from younger children. If you believe a child has given us personal data, contact us and we'll delete it.</p>
 
-      <h2 id="contact">11. Contact</h2>
-      <p>Questions about privacy? Email us at <a class="link" href="mailto:hello@spelvi.com">hello@spelvi.com</a>. We're a small team and we answer personally.</p>
+      <h2 id="security">12. Security</h2>
+      <p>Data is encrypted in transit, access to our servers is limited to us, and the app never stores your sign-in credentials in plain text. No system is perfectly secure; if a breach ever put your data at risk, we would tell you and the authorities as the law requires.</p>
+
+      <h2 id="changes">13. Changes</h2>
+      <p>If we change this policy, we'll update the date above; for significant changes we'll also tell you in the app or by email before they take effect.</p>
+
+      <h2 id="contact">14. Contact</h2>
+      <p>Questions about privacy? Email <a class="link" href="mailto:hello@spelvi.com">hello@spelvi.com</a>. Every message is read by a person.</p>
     </div>
   </div>
 </section>
