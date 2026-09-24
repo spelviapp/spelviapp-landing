@@ -37,7 +37,7 @@
     <span class="eyebrow reveal in">Legal</span>
     <h1 class="page-title reveal in">Privacy <span class="mark lav"><span>Policy</span></span></h1>
     <p class="page-lead reveal in d1">Plain-language summary first, full detail below. The short version: we collect as little as we can, we never sell your data, and you can switch off diagnostics or delete your account at any time.</p>
-    <div class="meta-row reveal in d1"><b>Last updated:</b> 23 September 2026</div>
+    <div class="meta-row reveal in d1"><b>Last updated:</b> 24 September 2026</div>
   </div>
 </header>
 
@@ -73,7 +73,7 @@
       <ul>
         <li><strong>If you don't sign in</strong> — nothing that names you. Your saved words, lessons and progress stay on your device. The app creates a random install identifier so our servers can apply the free plan's daily limits; it isn't derived from your hardware and isn't linked to your identity.</li>
         <li><strong>Account (optional)</strong> — if you sign in with Apple or Google: your email address, your display name if the provider shares it, and the provider's account id, so your progress can sync across devices.</li>
-        <li><strong>Synced learning data</strong> — for signed-in users: saved words and word lists, lesson and grammar progress, streaks and goals, your library, book highlights and notes, and news articles you bookmark (stored with their text and link so they stay readable on your other devices).</li>
+        <li><strong>Synced learning data</strong> — for signed-in users: saved words and word lists, lesson and grammar progress, streaks and goals, your library, book highlights and notes, and news articles you bookmark (their title, link, source, date and a short excerpt — never the article text).</li>
         <li><strong>What you ask the app to work on</strong> — the words you look up, the sentence around a word you tap, text you ask the AI helpers about, and your voice when you use speaking features. See sections <a class="link" href="#audio">4</a>–<a class="link" href="#direct">6</a> for where that goes.</li>
         <li><strong>Usage &amp; diagnostics</strong> — app events (for example which screens are opened, or that an exercise was completed and its score), crash reports and performance measurements, collected with Google Firebase (Analytics, Crashlytics and Performance Monitoring). They carry a random per-install id plus a few settings (your study and translation languages, whether you have Pro, app version, theme), and the SDKs add device model, operating system and locale. This data is <em>pseudonymous</em> — it doesn't include your name or email, but it isn't anonymous either. You can switch it off at any time in <strong>Settings → About → Share usage &amp; crash data</strong>.</li>
         <li><strong>Purchases</strong> — Apple or Google process the payment; we receive the subscription status, and our subscription provider Adapty links it to your install and, if you're signed in, to your account id. We never see your card details.</li>
@@ -98,13 +98,13 @@
       <p>Dictating a search uses your device's built-in speech recognition, which may send the audio to Apple or Google to be transcribed. That processing is governed by their privacy policies, not ours.</p>
 
       <h2 id="ai">5. AI features</h2>
+      <p>Translations of example sentences, definitions and words the dictionary doesn't cover are made the same way: the text goes to our servers, which answer from our dictionaries or a cache when they can and otherwise from the language models below.</p>
       <p>The AI helpers — explanations, a word's meaning in the sentence you found it in, stories from your saved words, grammar feedback, and practice conversations — send the relevant text through our servers to a language model. The model runs either on a server we operate ourselves or at one of these providers: <strong>Groq</strong>, <strong>Google</strong> (Gemini API) or <strong>Cloudflare</strong> (Workers AI). What is sent is the text itself — for example the sentence you tapped and the word in it, or the list of words for a story — never your name, email or account id.</p>
       <p>We don't use your content to train models. Some providers' terms allow them to use API inputs to improve their own services (Google's free Gemini API tier does), which is one more reason we send only the text. To save time and cost, answers are cached keyed by the text they were produced for, not by who asked.</p>
 
       <h2 id="direct">6. Services the app contacts directly</h2>
       <p>To fetch dictionary data and books, the app talks to some public services directly rather than through our servers. Each of them receives your IP address and the request itself, and handles it under its own privacy policy:</p>
       <ul>
-        <li><strong>Google Translate</strong> — words and short texts the app needs translated (for example lesson words, examples, definitions);</li>
         <li><strong>Datamuse</strong> — an English search that found nothing, to suggest spellings;</li>
         <li><strong>Wiktionary</strong>, <strong>Free Dictionary API</strong> and <strong>Tatoeba</strong> — the word being looked up;</li>
         <li><strong>Google Books</strong> — the title of a book whose description is shown;</li>
